@@ -2,15 +2,15 @@
 :root {
   /* LIGHT MODE */
   --main-color-light: #fffcf1;
-  --secondary-color-light: #ffffff;
+  --secondary-color-light: #e9f5fe;
   --accent-color-light: #f3b700;
-  --background-color-light: #fffcf1;
+  --contrast-color-light: #0f1e3d;
 
   /* DARK MODE (implementuju pozdějc) */
   --main-color-dark: #252525;
   --secondary-color-dark: ;
   --accent-color-dark: #308280;
-  --background-color-dark: #252525
+  --contrast-color-dark: ;
 }
 @font-face {
   font-family: "Roboto";
@@ -56,6 +56,18 @@ a {
   border-radius: 12px;
   box-shadow: inset 0 0 30px 5px #ffffff60;
 }
+#navBackground {
+  height: calc(8vh + 25px);
+  min-height: 105px;
+  width: calc(100vw - 20px);
+
+  position: absolute;
+  left: 10px;
+  top: 10px;
+
+  background-color: var(--contrast-color-light);
+  border-radius: 12px;
+}
 
 #navTriangle {
   position: absolute;
@@ -69,6 +81,16 @@ a {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-bottom: 8px solid var(--accent-color-light);
+}
+#navIconDiv {
+  position: absolute;
+  width: 20%;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+}
+#navIconDiv > img {
+  width: 100%;
 }
 .navElement {
   position: relative;

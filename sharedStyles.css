@@ -83,6 +83,7 @@ a {
   position: absolute;
   top: 90%;
   left: -5%;
+  z-index: -1;
 
   width: 110%;
   height: 3px;

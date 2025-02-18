@@ -50,7 +50,7 @@
   margin-bottom: 35px;
 
   border: 2px solid var(--accent-color-light);
-  border-radius: 7px;
+  border-radius: 12px;
   background-color: #00000050;
 
   text-align: center;
@@ -71,10 +71,37 @@
 
 #showcaseImageDiv {
   columns: 400px;
-  margin: 20px;
+  margin: 100px 20px;
 }
 #showcaseImageDiv img {
   width: 100%;
   margin-bottom: 10px;
+  border-radius: 12px;
+}
+/* TRAILER DIV BACKGROUND */
+#trailerDiv::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#trailerDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 1px solid var(--accent-color-light);
+  border-radius: 12px;
+
+  margin: 30px 18%;
+  padding: 10px;
+
+  backdrop-filter: blur(14px);
+}
+#trailerDiv > h2 {
+  font-size: 2em;
+}
+#trailerDiv > video {
+  width: 85%;
   border-radius: 12px;
 }

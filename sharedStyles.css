@@ -100,3 +100,10 @@ a {
 .navElement a {
   font-size: 1.6em;
 }
+
+/* SUBSTITURE FOR <hr> WITH ACCET COLOR */
+div.breakLine {
+  position: relative;
+  width: 100%;
+  border-top: 2px solid var(--accent-color-light);
+}

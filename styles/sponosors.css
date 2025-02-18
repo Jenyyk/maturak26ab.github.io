@@ -1,5 +1,12 @@
 h1, h2 {
     text-align: center;
+}
+
+h1 {
+    margin-top: 4rem;
+}
+
+h2 {
     margin-top: 0;
 }
 
@@ -9,19 +16,11 @@ p {
 
 hr {
     border-top: 2px solid var(--accent-color-light);
-    margin: 2rem 0;
-}
-
-img {
-
+    margin-bottom: 2rem;
 }
 
 .mainContent {
     padding: 0 10%;
-}
-
-#generalInfo {
-    margin-bottom: 4rem;
 }
 
 .sponsor {

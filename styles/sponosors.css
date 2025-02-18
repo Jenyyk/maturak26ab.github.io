@@ -1,0 +1,35 @@
+h1, h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+p {
+    text-align: justify;
+}
+
+hr {
+    border-top: 2px solid var(--accent-color-light);
+    margin: 2rem 0;
+}
+
+img {
+
+}
+
+.mainContent {
+    padding: 0 4rem;
+}
+
+#generalInfo {
+    margin-bottom: 4rem;
+}
+
+.sponsor {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.sponsorInfo {
+    width: 100%;
+}

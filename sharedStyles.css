@@ -31,7 +31,7 @@ body {
 }
 a {
   color: unset;
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 
 
@@ -41,33 +41,28 @@ a {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
 
-  top: 0;
   position: sticky;
-  width: 100vw;
+  top: 5px;
+  z-index: 1;
+  width: 90vw;
   height: 8vh;
   min-height: 80px;
-  margin-bottom: 60px;
+  margin: 20px auto;
 
-  background-color: var(--main-color-light);
-  border-bottom: 2px solid var(--accent-color-light);
-  border-radius: 0 0 12px 12px;
+  background: linear-gradient(140deg, #ffffff30 55%, #ffffff40 85%);
+  backdrop-filter: blur(14px);
+  border: 2px solid var(--accent-color-light);
+  border-radius: 12px;
+  box-shadow: inset 0 0 30px 5px #ffffff60;
 }
-#leftNavAbs {
-  position: absolute;
-  left: 0;
 
-  height: 100%;
-  width: 10%;
-  border-right: 2px solid var(--accent-color-light);
-}
 #navTriangle {
   position: absolute;
   width: 0;
   height: 0;
 
-  top: 90%;
+  top: 95%;
   left: 50%;
   transform: translateX(-50%);
 
@@ -77,17 +72,24 @@ a {
 }
 .navElement {
   position: relative;
-  width: auto;
+  width: 18vw;
+
+  text-align: center;
+  border-left: 1px solid var(--accent-color-light);
+
+  background: radial-gradient(ellipse at center, #ffffff80, transparent 30%);
+  background-size: 120% 400%;
+  background-position: center;
 }
 /* UNDERLINE HOVER EFFECT */
 .navElement::before {
   content: "";
   position: absolute;
-  top: 90%;
-  left: -5%;
+  top: 80%;
+  left: 25%;
   z-index: -1;
 
-  width: 110%;
+  width: 50%;
   height: 3px;
 
   background: linear-gradient(to right, var(--accent-color-light) 49%, transparent 50%);
@@ -100,7 +102,7 @@ a {
   background-position: 0%;
 }
 .navElement a {
-  font-size: 1.6em;
+  font-size: 1.8em;
 }
 
 /* SUBSTITURE FOR <hr> WITH ACCET COLOR */

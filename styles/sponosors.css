@@ -19,6 +19,14 @@ hr {
     margin-bottom: 2rem;
 }
 
+.carpet {
+    min-height: 50px;
+    color: white;
+    background-image: url("../assets/carpet_2_sat.png");
+    background-repeat: repeat-x;
+    border: none;
+}
+
 .mainContent {
     padding: 0 10%;
 }

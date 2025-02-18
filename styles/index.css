@@ -84,6 +84,14 @@
   position: absolute;
   width: 100%;
   height: 100%;
+  margin: 0;
+  top: 0;
+  z-index: -2;
+
+  background-image: url("https://picsum.photos/1200/1000"); /* PLACEHOLDER BACKGROUND */
+  background-size: cover;
+  background-position: center;
+  filter: blur(14px);
 }
 #trailerDiv {
   display: flex;

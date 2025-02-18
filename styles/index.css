@@ -13,6 +13,10 @@
   height: 100%;
 }
 #mainTextParent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   border: 1px solid var(--accent-color-light);
   border-radius: 12px;
   background: linear-gradient(140deg, #00000010 55%, #ffffff40 85%);
@@ -37,4 +41,28 @@
 
   margin-top: 2px;
   margin-bottom: 50px;
+}
+
+#buyTicketDiv {
+  width: 40%;
+  margin-top: 5px;
+  margin-bottom: 35px;
+
+  border: 2px solid var(--accent-color-light);
+  border-radius: 7px;
+  background-color: #00000040;
+
+  text-align: center;
+  color: white;
+
+  transition: transform 500ms ease-out;
+}
+#buyTicketDiv:hover {
+  transform: scale(1.05);
+}
+#buyTicketDiv > h2 {
+  font-size: 1.8em;
+}
+#buyTicketDiv > p {
+  font-size: 1.2em;
 }

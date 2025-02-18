@@ -43,12 +43,14 @@ a {
   align-items: center;
   justify-content: space-evenly;
 
-  position: relative;
+  top: 0;
+  position: sticky;
   width: 100vw;
   height: 8vh;
   min-height: 80px;
   margin-bottom: 60px;
 
+  background-color: var(--main-color-light);
   border-bottom: 2px solid var(--accent-color-light);
   border-radius: 0 0 12px 12px;
 }

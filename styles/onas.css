@@ -1,0 +1,28 @@
+#mainAboutDiv {
+  width: 60%;
+  margin: 70px auto;
+}
+#mainAboutDiv > h1 {
+  font-size: 3em;
+  text-align: center;
+}
+#mainAboutDiv > p {
+  font-size: 1.6em;
+}
+
+#showcaseImageDiv {
+  columns: 400px;
+  margin: 100px 20px;
+}
+#showcaseImageDiv img {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  transition: all 500ms ease-out;
+}
+#showcaseImageDiv img:hover {
+  transform: scale(1.05);
+}
+#showcaseImageDiv:has(img:hover) img:not(:hover) {
+  opacity: 0.6;
+}

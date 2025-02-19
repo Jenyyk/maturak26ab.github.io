@@ -70,16 +70,14 @@
   font-size: 1.2em;
 }
 
+#mainTextDiv {
+  width: 60%;
+  margin: 60px auto;
+}
+#mainTextDiv p {
+  font-size: 1.2em;
+}
 
-#showcaseImageDiv {
-  columns: 400px;
-  margin: 100px 20px;
-}
-#showcaseImageDiv img {
-  width: 100%;
-  margin-bottom: 10px;
-  border-radius: 12px;
-}
 /* TRAILER DIV BACKGROUND */
 #trailerDiv::before {
   content: "";

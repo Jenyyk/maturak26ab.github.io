@@ -119,15 +119,16 @@
   margin: 40px auto 80px auto;
 
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   perspective: 1000px;
 }
 #bottomGalleryDiv img {
   width: 19%;
   transition: all 600ms ease-out;
+  border: 0.5vw solid transparent;
 }
 /* BRUTE FORCING NICE HOVER EFFECT  */
-#bottomGalleryDiv:has(img:hover) img:not(:hover), #bottomGalleryDiv:hover img {
+#bottomGalleryDiv:has(img:hover) img:not(:hover) {
   opacity: 0.8;
   transform: scale(0.8);
 }

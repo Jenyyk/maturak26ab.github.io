@@ -115,9 +115,37 @@ a {
   color: var(--secondary-color-light);
 }
 
-/* SUBSTITURE FOR <hr> WITH ACCET COLOR */
+/* SUBSTITURE FOR <hr> WITH ACCENT COLOR */
 div.breakLine {
   position: relative;
   width: 100%;
   border-top: 2px solid var(--accent-color-light);
+}
+
+/* STYLES FOR POPUP IMAGES USING js/imagePreview.js */
+.popupImage {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 5;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #00000060;
+  opacity: 1;
+  animation: fadeIn 300ms ease-out;
+}
+.popupImage img {
+  max-width: 90%;
+  max-height: 90%;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }

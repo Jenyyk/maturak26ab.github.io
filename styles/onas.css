@@ -26,30 +26,3 @@
 #showcaseImageDiv:has(img:hover) img:not(:hover) {
   opacity: 0.6;
 }
-
-.popupImage {
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  width: 100vw;
-  height: 100vh;
-
-  z-index: 5;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background-color: #00000060;
-  opacity: 1;
-  animation: fadeIn 300ms ease-out;
-}
-.popupImage img {
-  max-width: 90%;
-  max-height: 90%;
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}

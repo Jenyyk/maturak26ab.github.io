@@ -113,3 +113,52 @@
   width: 85%;
   border-radius: 12px;
 }
+
+#bottomGalleryDiv {
+  width: 90vw;
+  margin: 40px auto 80px auto;
+
+  display: flex;
+  justify-content: space-around;
+  perspective: 1000px;
+}
+#bottomGalleryDiv img {
+  width: 19%;
+  transition: all 600ms ease-out;
+}
+/* BRUTE FORCING NICE HOVER EFFECT  */
+#bottomGalleryDiv:has(img:hover) img:not(:hover), #bottomGalleryDiv:hover img {
+  opacity: 0.8;
+  transform: scale(0.8);
+}
+#bottomGalleryDiv img:has(+ * + *:hover) {
+  transform:
+    scale(0.95)
+    rotate3d(0, -1, 0, 10deg)
+    !important;
+}
+#bottomGalleryDiv img:has(+ *:hover) {
+  transform:
+    scale(1.05)
+    rotate3d(0, -1, 0, 20deg)
+    !important;
+}
+#bottomGalleryDiv img:hover {
+  transform:
+    scale(1.15)
+    !important;
+  z-index: 2;
+  opacity: 1;
+}
+#bottomGalleryDiv img:hover + * {
+  transform:
+    scale(1.05)
+    rotate3d(0, 1, 0, 20deg)
+    !important;
+}
+#bottomGalleryDiv img:hover + * + * {
+  transform:
+    scale(0.95)
+    rotate3d(0, 1, 0, 10deg)
+    !important;
+}

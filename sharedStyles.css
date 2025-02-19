@@ -50,28 +50,10 @@ a {
   min-height: 80px;
   margin: 20px auto;
 
-  background: linear-gradient(140deg, #ffffff30 55%, #ffffff40 85%);
-  backdrop-filter: blur(14px);
+  background: var(--contrast-color-light);
   border: 2px solid var(--accent-color-light);
   border-radius: 12px;
   box-shadow: inset 0 0 30px 5px #ffffff60;
-}
-/* FIRST NAVBAR ENTRY WITHOUT BORDER */
-#topBar > :first-child {
-  border-left: none;
-}
-
-#navBackground {
-  height: calc(8vh + 25px);
-  min-height: 105px;
-  width: calc(100vw - 20px);
-
-  position: absolute;
-  left: 10px;
-  top: 10px;
-
-  background-color: var(--contrast-color-light);
-  border-radius: 12px;
 }
 
 #navTriangle {
@@ -103,10 +85,10 @@ a {
 
   text-align: center;
   border-left: 1px solid var(--accent-color-light);
-
-  background: radial-gradient(ellipse at center, #ffffff80, transparent 30%);
-  background-size: 120% 400%;
-  background-position: center;
+}
+/* FIRST NAVELEMENT HAS NO BORDER */
+#topBar > :first-child {
+  border-left: none;
 }
 /* UNDERLINE HOVER EFFECT */
 .navElement::before {
@@ -130,6 +112,7 @@ a {
 }
 .navElement a {
   font-size: 1.8em;
+  color: var(--secondary-color-light);
 }
 
 /* SUBSTITURE FOR <hr> WITH ACCET COLOR */

@@ -10,6 +10,11 @@
 
 - Alternativně napište kamkoliv na sítě  
 
+## LOKÁLNÍ TESTOVÁNÍ
+
+- Je třeba spustit web server v tomto repozitáři:
+`python -m http.server 8000`
+
 ### Správce repozitáře:
 - [@Jenyyk](https://github.com/Jenyyk)
 

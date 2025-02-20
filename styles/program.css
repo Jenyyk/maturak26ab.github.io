@@ -1,7 +1,12 @@
 #topBar {
     position: fixed;
-    margin-left: 10%;
-    margin: 0 5vw;
+    margin: 2vh 5vw;
+}
+
+.bottomImage {
+    width: 100%;
+    height: 14vw;
+    background-image: url("../assets/bottomImage.png");
 }
 
 .eventCard {
@@ -55,7 +60,7 @@
     flex-direction: column;
     align-items: center;
 
-    margin-top: 50vh;
+    margin-top: 25vw;
     margin-left: 30vw;
 
     justify-content: center;
@@ -68,7 +73,6 @@
     background-color: #D3D3D3;
     border-radius: 10px;
     color: #D3D3D3;
-    blur: (14px);
     background: linear-gradient(140deg, #00000020 55%, #ffffff40 85%);
     backdrop-filter: blur(14px);
     opacity: 0.7;
@@ -84,18 +88,17 @@
 
 .topImage {
     background-image: url("../assets/programTopImage.png");
-    display:flex;
+    display: flex;
     position: relative;
-    width: 100%;
-    height: 100vh;
+    width: 100%;  /* Always full width */
+    height: auto;  /* Allow height to adjust */
+    min-height: 50vw; /* Ensures visibility on tall screens */
     margin-bottom: 10vh;
 
-     background-size: 100% 100%; /* Forces the image to fill the container and stretch */
-        background-position: center;
-        background-repeat: no-repeat;
-
-    /*object-fit: fill;*/
+    background-size: contain; /* Ensures the whole image is visible */
+    background-repeat: no-repeat; /* Prevents tiling */
 }
+
 
 #taskBar {
     position: absolute;

@@ -6,28 +6,18 @@
     <link rel="icon" href="/assets/favicon.png">
     <!-- Every page has a shared and individual stylesheet! -->
     <link rel="stylesheet" href="/sharedStyles.css">
-    <link rel="stylesheet" href="/styles/sponosors.css">
+    <link rel="stylesheet" href="/styles/sponsors.css">
   </head>
   <body>
-    <nav id="topBar">
-      <div class="navElement">
-        <div id="navIconDiv"><img src="/assets/favicon.png"></div>
-        <a href="/index.html">O plese</a>
-      </div>
-      <div class="navElement">
-        <a href="./onas.html">O nás</a>
-      </div>
-      <div class="navElement">
-        <a href="./program.html">Program</a>
-      </div>
-      <div class="navElement">
-        <a href="./sponsors.html">Sponzoři</a>
-        <div id="navTriangle"></div>
-      </div>
-      <div class="navElement">
-        <a href="./kontakt.html">Kontakt</a>
-      </div>
-    </nav>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/camel.js"></script>
+    <script src="/js/preload.js"></script>
+    <script>
+      initNavbar('sponsors').then(() => {
+        initCamel();
+        initPreload();
+      });
+    </script>
 
     <div class="mainContent">
       <div id="generalInfo">
@@ -45,7 +35,5 @@
         </div>
       </div>
     </div>
-    <script src="/js/preload.js"></script>
-    <script src="/js/camel.js"></script>
   </body>
 </html>

@@ -31,10 +31,13 @@ let camelPosX = 50,
   sleep = false,
   camelExists = false;
 
-// Camel is an easter egg, and only spawns when certain conditions are met
-document.getElementById("navIconDiv").addEventListener("dblclick", (e) => {
-  if (e.altKey && e.ctrlKey && !camelExists) { newCamel(); }
-})
+// Only to be called once the navbar is initialized and inserted into the DOM
+function initCamel() {
+  // Camel is an easter egg, and only spawns when certain conditions are met
+  document.getElementById("navIconDiv").addEventListener("dblclick", (e) => {
+    if (e.altKey && e.ctrlKey && !camelExists) { newCamel(); }
+  })
+}
 
 // debugging purposes
 // newCamel()

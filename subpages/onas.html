@@ -9,25 +9,16 @@
     <link rel="stylesheet" href="/styles/onas.css">
   </head>
   <body>
-    <nav id="topBar">
-        <div class="navElement">
-            <div id="navIconDiv"><img src="/assets/favicon.png"></div>
-            <a href="/index.html">O plese</a>
-        </div>
-        <div class="navElement">
-            <a href="./onas.html">O nás</a>
-            <div id="navTriangle"></div>
-        </div>
-        <div class="navElement">
-            <a href="./program.html">Program</a>
-        </div>
-        <div class="navElement">
-            <a href="./sponsors.html">Sponzoři</a>
-        </div>
-        <div class="navElement">
-            <a href="./kontakt.html">Kontakt</a>
-        </div>
-    </nav>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/camel.js"></script>
+    <script src="/js/preload.js"></script>
+    <script>
+      initNavbar('onas').then(() => {
+        initCamel();
+        initPreload();
+      });
+    </script>
+
     <div id="mainAboutDiv">
       <h1>Třídy 8.A a 8.B</h1>
       <p>Jsme fakt nejlepší, Béčko je teda lepší než Áčko, a to ve všem, ale jinak jsem všichni dobrý. Jsme určitě lepší než čtyrletej. Lorem Ipsum Dolor Sit Amálka. Consectis Viva Medici Viva la Revolución. To je Tom Cruise. Teď si zvětšíme pohlavní orgány - Alice Rychlíková.</p>
@@ -46,7 +37,5 @@
       <img alt="showcase image" class="preview" src="https://picsum.photos/800/1000">
     </div>
     <script src="/js/imagePreview.js"></script>
-    <script src="/js/preload.js"></script>
-    <script src="/js/camel.js"></script>
   </body>
 </html>

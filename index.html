@@ -9,25 +9,15 @@
     <link rel="stylesheet" href="/styles/index.css">
   </head>
   <body>
-    <nav id="topBar">
-      <div class="navElement">
-        <div id="navIconDiv"><img src="/assets/favicon.png"></div>
-        <a href="/index.html">O plese</a>
-        <div id="navTriangle"></div>
-      </div>
-      <div class="navElement">
-        <a href="/subpages/onas.html">O nás</a>
-      </div>
-      <div class="navElement">
-        <a href="/subpages/program.html">Program</a>
-      </div>
-      <div class="navElement">
-        <a href="/subpages/sponsors.html">Sponzoři</a>
-      </div>
-      <div class="navElement">
-        <a href="/kontakt.html">Kontakt</a>
-      </div>
-    </nav>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/camel.js"></script>
+    <script src="/js/preload.js"></script>
+    <script>
+      initNavbar('index').then(() => {
+        initCamel();
+        initPreload();
+      });
+    </script>
 
     <div id="mainImageDiv">
       <!-- PLACEHOLDER -->
@@ -59,8 +49,5 @@
       <img alt="gallery image" src="https://picsum.photos/700/700">
       <img alt="gallery image" src="https://picsum.photos/800/800">
     </div>
-
-    <script src="/js/preload.js"></script>
-    <script src="/js/camel.js"></script>
   </body>
 </html>

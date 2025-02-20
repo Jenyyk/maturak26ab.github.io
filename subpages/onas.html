@@ -9,15 +9,7 @@
     <link rel="stylesheet" href="/styles/onas.css">
   </head>
   <body>
-    <script src="/js/navbar.js"></script>
-    <script src="/js/camel.js"></script>
-    <script src="/js/preload.js"></script>
-    <script>
-      initNavbar('onas').then(() => {
-        initCamel();
-        initPreload();
-      });
-    </script>
+    <script type="module">import('/js/navbar.js').then(nb => nb.createNavbar('onas'));</script>
 
     <div id="mainAboutDiv">
       <h1>Třídy 8.A a 8.B</h1>

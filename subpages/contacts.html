@@ -9,14 +9,6 @@
     <link rel="stylesheet" href="/styles/contacts.css">
   </head>
   <body>
-    <script src="/js/navbar.js"></script>
-    <script src="/js/camel.js"></script>
-    <script src="/js/preload.js"></script>
-    <script>
-      initNavbar('contacts').then(() => {
-        initCamel();
-        initPreload();
-      });
-    </script>
+    <script type="module">import('/js/navbar.js').then(nb => nb.createNavbar('contacts'));</script>
   </body>
 </html>

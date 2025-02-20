@@ -32,7 +32,7 @@ let camelPosX = 50,
   camelExists = false;
 
 // Only to be called once the navbar is initialized and inserted into the DOM
-function initCamel() {
+export function initCamel() {
   // Camel is an easter egg, and only spawns when certain conditions are met
   document.getElementById("navIconDiv").addEventListener("dblclick", (e) => {
     if (e.altKey && e.ctrlKey && !camelExists) { newCamel(); }

@@ -1,27 +1,32 @@
+import { initCamel } from './camel.js';
+import { initPreload } from './preload.js';
+
 /**
- * This script is used to dynamically load the navbar on every page.
+ * Inserts navbar into DOM and handles secondary functionalities associated with it.
+ * 
+ * Simple single line implementation featuring sponsors subpage including preload and camel:
+ * ```js
+ *  <script type="module">import('/js/navbar.js').then(nb => nb.insertNavbar('sponsors'));</script>
+ * ```
+ * @param {*} selectedPage 
+ */
+export async function createNavbar(selectedPage) {
+    await insertNavbar(selectedPage);
+    initPreload();
+    initCamel();
+}
+
+/**
+ * Inserts navbar into DOM.
  * 
  * !!! IMPORTANT !!!
  * 
- * Any references to the navbar (and its DOM elements) must take place after the navbar has been loaded.
+ * Any references to the navbar (and its DOM elements) must take place AFTER the navbar has been loaded.
  * Make sure to await this function or append then() for any script that depends on the navbar.
- * 
- * Usage featuring sponsors subpage including preload and camel:
- * ```js
- *  <script src="/js/navbar.js"></script>
- *  <script src="/js/camel.js"></script>
- *  <script src="/js/preload.js"></script>
- *  <script>
- *      initNavbar('sponsors').then(() => {
- *          initCamel();
- *          initPreload();
- *      });
- *  </script>
- * ```
  * 
  * @param {*} selectedPage repository name of the corresponding html file
  */
-async function initNavbar(selectedPage) {
+async function insertNavbar(selectedPage) {
     await fetch('/navbar.html')
         .then(response => response.text())
         .then(data => {

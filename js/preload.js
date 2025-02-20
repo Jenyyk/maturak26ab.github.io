@@ -2,7 +2,7 @@
 // THIS WILL SPEED UP PAGE LOADING
 
 // Only to be called once the navbar is initialized and inserted into the DOM
-function initPreload() {
+export function initPreload() {
   // Gets all <a> tags
   document.querySelectorAll("a").forEach((link) => {
     // Add a listener for hovering

@@ -9,15 +9,7 @@
     <link rel="stylesheet" href="/styles/sponsors.css">
   </head>
   <body>
-    <script src="/js/navbar.js"></script>
-    <script src="/js/camel.js"></script>
-    <script src="/js/preload.js"></script>
-    <script>
-      initNavbar('sponsors').then(() => {
-        initCamel();
-        initPreload();
-      });
-    </script>
+    <script type="module">import('/js/navbar.js').then(nb => nb.createNavbar('sponsors'));</script>
 
     <div class="mainContent">
       <div id="generalInfo">

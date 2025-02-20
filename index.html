@@ -9,15 +9,7 @@
     <link rel="stylesheet" href="/styles/index.css">
   </head>
   <body>
-    <script src="/js/navbar.js"></script>
-    <script src="/js/camel.js"></script>
-    <script src="/js/preload.js"></script>
-    <script>
-      initNavbar('index').then(() => {
-        initCamel();
-        initPreload();
-      });
-    </script>
+    <script type="module">import('/js/navbar.js').then(nb => nb.createNavbar('index'));</script>
 
     <div id="mainImageDiv">
       <!-- PLACEHOLDER -->

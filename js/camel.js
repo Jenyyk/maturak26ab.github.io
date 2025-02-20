@@ -31,10 +31,13 @@ let camelPosX = 50,
   sleep = false,
   camelExists = false;
 
-// Camel is an easter egg, and only spawns when certain conditions are met
-document.getElementById("navIconDiv").addEventListener("dblclick", (e) => {
-  if (e.altKey && e.ctrlKey && !camelExists) { newCamel(); }
-})
+// Only to be called once the navbar is initialized and inserted into the DOM
+function initCamel() {
+  // Camel is an easter egg, and only spawns when certain conditions are met
+  document.getElementById("navIconDiv").addEventListener("dblclick", (e) => {
+    if (e.altKey && e.ctrlKey && !camelExists) { newCamel(); }
+  })
+}
 
 // debugging purposes
 // newCamel()
@@ -49,7 +52,7 @@ function newCamel() {
   camelElement.style.height = `${32 * sizeModifier}px`;
   camelElement.style.backgroundSize = "200%";
   camelElement.style.position = "fixed";
-  camelElement.style.backgroundImage = "url('./assets/camelSpriteSheet.png')";
+  camelElement.style.backgroundImage = "url('/assets/camelSpriteSheet.png')";
   camelElement.style.imageRendering = "pixelated";
   camelElement.style.left = `${camelPosX - 16}px`;
   camelElement.style.top = `${camelPosY - 16}px`;

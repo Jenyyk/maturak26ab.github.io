@@ -3,96 +3,80 @@
   <head>
     <title>Arabská noc 2026</title>
     <meta charset="utf-8">
-    <link rel="icon" href="../assets/favicon.png">
+    <link rel="icon" href="/assets/favicon.png">
     <!-- Every page has a shared and individual stylesheet! -->
-    <link rel="stylesheet" href="../sharedStyles.css">
-    <link rel="stylesheet" href="../styles/program.css">
+    <link rel="stylesheet" href="/sharedStyles.css">
+    <link rel="stylesheet" href="/styles/program.css">
   </head>
 <body>
-<div id="navBackground"></div>
-<nav id="topBar">
-    <div class="navElement">
-        <div id="navIconDiv"><img src="../assets/favicon.png"></div>
-        <a href="../index.html">O plese</a>
-    </div>
-    <div class="navElement">
-        <a href="./onas.html">O nás</a>
-    </div>
-    <div class="navElement">
-        <a href="./program.html">Program</a>
-        <div id="navTriangle"></div>
-    </div>
-    <div class="navElement">
-        <a href="./sponsors.html">Sponzoři</a>
-    </div>
-    <div class="navElement">
-        <a href="./kontakt.html">Kontakt</a>
-    </div>
-</nav>
-<div class="topImage">
-    <div id="taskBar"></div>
-    <div class="headerRect">
-        <div id="title">
-            Program
+    <script src="/js/navbar.js"></script>
+    <script src="/js/camel.js"></script>
+    <script src="/js/preload.js"></script>
+    <script>
+      initNavbar('program').then(() => {
+        initCamel();
+        initPreload();
+      });
+    </script>
+
+    <div id="navBackground"></div>
+
+    <div class="topImage">
+        <div id="taskBar"></div>
+        <div class="headerRect">
+            <div id="title">
+                Program
+            </div>
         </div>
     </div>
-</div>
 
-<div class="eventCard">
-    <div class="eventTime">17:00</div>
-    <div class="eventInfo">
-        <div class="eventTitle">Úvodní program</div>
-        <div class="eventDescription">Krátké představení a zahájení akce.</div>
+    <div class="eventCard">
+        <div class="eventTime">17:00</div>
+        <div class="eventInfo">
+            <div class="eventTitle">Úvodní program</div>
+            <div class="eventDescription">Krátké představení a zahájení akce.</div>
+        </div>
     </div>
-</div>
 
-<div class="eventCard">
-    <div class="eventTime">18:00</div>
-    <div class="eventInfo">
-        <div class="eventTitle">Hlavní prezentace</div>
-        <div class="eventDescription">Přednáška na aktuální téma s hostujícím řečníkem.</div>
+    <div class="eventCard">
+        <div class="eventTime">18:00</div>
+        <div class="eventInfo">
+            <div class="eventTitle">Hlavní prezentace</div>
+            <div class="eventDescription">Přednáška na aktuální téma s hostujícím řečníkem.</div>
+        </div>
     </div>
-</div>
 
-<div class="eventCard">
-    <div class="eventTime">19:00</div>
-    <div class="eventInfo">
-        <div class="eventTitle">Kulturní vystoupení</div>
-        <div class="eventDescription">Umělecké představení zahrnující hudbu a tanec.</div>
+    <div class="eventCard">
+        <div class="eventTime">19:00</div>
+        <div class="eventInfo">
+            <div class="eventTitle">Kulturní vystoupení</div>
+            <div class="eventDescription">Umělecké představení zahrnující hudbu a tanec.</div>
+        </div>
     </div>
-</div>
 
-<div class="eventCard">
-    <div class="eventTime">20:00</div>
-    <div class="eventInfo">
-        <div class="eventTitle">Přestávka a občerstvení</div>
-        <div class="eventDescription">Možnost odpočinku a občerstvení pro účastníky.</div>
+    <div class="eventCard">
+        <div class="eventTime">20:00</div>
+        <div class="eventInfo">
+            <div class="eventTitle">Přestávka a občerstvení</div>
+            <div class="eventDescription">Možnost odpočinku a občerstvení pro účastníky.</div>
+        </div>
     </div>
-</div>
 
-<div class="eventCard">
-    <div class="eventTime">21:00</div>
-    <div class="eventInfo">
-        <div class="eventTitle">Panelová diskuze</div>
-        <div class="eventDescription">Otevřená debata s odborníky a hosty.</div>
+    <div class="eventCard">
+        <div class="eventTime">21:00</div>
+        <div class="eventInfo">
+            <div class="eventTitle">Panelová diskuze</div>
+            <div class="eventDescription">Otevřená debata s odborníky a hosty.</div>
+        </div>
     </div>
-</div>
 
-<div class="eventCard">
-    <div class="eventTime">22:00</div>
-    <div class="eventInfo">
-        <div class="eventTitle">Závěrečný program</div>
-        <div class="eventDescription">Shrnutí události a poděkování účastníkům.</div>
+    <div class="eventCard">
+        <div class="eventTime">22:00</div>
+        <div class="eventInfo">
+            <div class="eventTitle">Závěrečný program</div>
+            <div class="eventDescription">Shrnutí události a poděkování účastníkům.</div>
+        </div>
     </div>
-</div>
 
-
-<script src="../js/preload.js"></script>
-<script src="./js/camel.js"></script>
-</body>
-</html>
-
-    <script src="../js/preload.js"></script>
-    <script src="./js/camel.js"></script>
-</body>
+  </body>
 </html>

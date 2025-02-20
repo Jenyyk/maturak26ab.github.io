@@ -3,31 +3,21 @@
   <head>
     <title>Arabská noc 2026</title>
     <meta charset="utf-8">
-    <link rel="icon" href="../assets/favicon.png">
+    <link rel="icon" href="/assets/favicon.png">
     <!-- Every page has a shared and individual stylesheet! -->
-    <link rel="stylesheet" href="../sharedStyles.css">
-    <link rel="stylesheet" href="../styles/sponosors.css">
+    <link rel="stylesheet" href="/sharedStyles.css">
+    <link rel="stylesheet" href="/styles/sponsors.css">
   </head>
   <body>
-    <nav id="topBar">
-      <div class="navElement">
-        <div id="navIconDiv"><img src="../assets/favicon.png"></div>
-        <a href="../index.html">O plese</a>
-      </div>
-      <div class="navElement">
-        <a href="./onas.html">O nás</a>
-      </div>
-      <div class="navElement">
-        <a href="./program.html">Program</a>
-      </div>
-      <div class="navElement">
-        <a href="./sponsors.html">Sponzoři</a>
-        <div id="navTriangle"></div>
-      </div>
-      <div class="navElement">
-        <a href="./kontakt.html">Kontakt</a>
-      </div>
-    </nav>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/camel.js"></script>
+    <script src="/js/preload.js"></script>
+    <script>
+      initNavbar('sponsors').then(() => {
+        initCamel();
+        initPreload();
+      });
+    </script>
 
     <div class="mainContent">
       <div id="generalInfo">
@@ -38,14 +28,12 @@
       <h1>Generální sponzor</h1>
       <hr class="carpet">
       <div class="sponsor">
-        <img class="sponsorImage" src="../assets/placeholder_image.jpeg" alt="sponsor">
+        <img class="sponsorImage" src="/assets/placeholder_image.jpeg" alt="sponsor">
         <div class="sponsorInfo">
           <h2>Jméno sponzora</h2>
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Et harum quidem rerum facilis est et expedita distinctio. Sed ac dolor sit amet purus malesuada congue. Phasellus faucibus molestie nisl. Mauris elementum mauris vitae tortor. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ipsum massa, ullamcorper in, auctor et, scelerisque sed, est. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
         </div>
       </div>
     </div>
-    <script src="../js/preload.js"></script>
-    <script src="../js/camel.js"></script>
   </body>
 </html>

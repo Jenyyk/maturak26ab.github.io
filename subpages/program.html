@@ -9,7 +9,15 @@
     <link rel="stylesheet" href="/styles/program.css">
   </head>
 <body>
-    <script type="module">import('/js/navbar.js').then(nb => nb.createNavbar('program'));</script>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/camel.js"></script>
+    <script src="/js/preload.js"></script>
+    <script>
+      initNavbar('program').then(() => {
+        initCamel();
+        initPreload();
+      });
+    </script>
 
     <div id="navBackground"></div>
 
@@ -69,6 +77,6 @@
             <div class="eventDescription">Shrnutí události a poděkování účastníkům.</div>
         </div>
     </div>
-
+    <div class="bottomImage"></div>
   </body>
 </html>

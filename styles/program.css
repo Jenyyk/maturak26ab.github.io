@@ -1,22 +1,98 @@
-.headerText{
-    font-size: 2em;
-    font-weight: bold;
-    color: #8B5533;
+#topBar {
+    position: fixed;
+    margin-left: 10%;
+    margin: 0 5vw;
 }
+
+.eventCard {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  width: 80%;
+  max-width: 900px;
+  margin: 20px 5vw;
+  padding: 15px;
+
+  background: var(--secondary-color-light);
+  border-left: 6px solid var(--accent-color-light);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  font-size: 1.2em;
+  color: var(--contrast-color-light);
+}
+
+.eventTime {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: var(--accent-color-light);
+  min-width: 80px;
+  text-align: center;
+}
+
+.eventInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.eventTitle {
+  font-weight: bold;
+  font-size: 1.4em;
+  margin-bottom: 5px;
+}
+
+.eventDescription {
+  font-size: 1em;
+  color: #333;
+  opacity: 0.8;
+}
+
+
 .headerRect {
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
+
+    margin-top: 50vh;
+    margin-left: 30vw;
 
     justify-content: center;
+
+    top: 3vh;
+
+    width: 40vw;
+    height: 10vh;
+    /*box-shadow: -0.4vh -0.4vh #A9A9A9;*/
+    background-color: #D3D3D3;
+    border-radius: 10px;
+    color: #D3D3D3;
+    blur: (14px);
+    background: linear-gradient(140deg, #00000020 55%, #ffffff40 85%);
+    backdrop-filter: blur(14px);
+    opacity: 0.7;
+    /*border-style: solid;
+    border-color: #505000;*/
+}
+
+#title {
+    color: #FFFFFF;
+    font-size: 3em;
+    font-weight: 900;
+}
+
+.topImage {
+    background-image: url("program.png");
+    display:flex;
     position: relative;
-    top: 2vw;
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 10vh;
 
-    width: 77vw;
-    height: 8.47vh;
-    box-shadow: -0.4vh -0.4vh #8B5533;
-    background-color: #F5E1B5;
-    border-radius: 20px 20px 0 0;
+     background-size: 100% 100%; /* Forces the image to fill the container and stretch */
+        background-position: center;
+        background-repeat: no-repeat;
 
+    /*object-fit: fill;*/
 }

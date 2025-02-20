@@ -83,7 +83,7 @@
 }
 
 .topImage {
-    background-image: url("program.png");
+    background-image: url("../assets/program.png");
     display:flex;
     position: relative;
     width: 100%;

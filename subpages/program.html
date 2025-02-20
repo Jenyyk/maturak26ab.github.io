@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/styles/program.css">
   </head>
 <body>
-    <script src="/js/navbar.js" type="module"></script>
+    <script type="module">import('/js/navbar.js').then(nb => nb.createNavbar('program'));</script>
 
     <div id="navBackground"></div>
 

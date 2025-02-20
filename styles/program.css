@@ -4,7 +4,12 @@
 }
 
 .bottomImage {
-    width: 100%;
+    margin-top: 10vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    width: 100vw;
     height: 14vw;
     background-image: url("../assets/bottomImage.png");
 }
@@ -90,11 +95,10 @@
     background-image: url("../assets/programTopImage.png");
     display: flex;
     position: relative;
-    width: 100%;  /* Always full width */
+    width: 100vw;  /* Always full width */
     height: auto;  /* Allow height to adjust */
-    min-height: 50vw; /* Ensures visibility on tall screens */
-    margin-bottom: 10vh;
-
+    min-height: 60vw; /* Ensures visibility on tall screens */
+    
     background-size: contain; /* Ensures the whole image is visible */
     background-repeat: no-repeat; /* Prevents tiling */
 }

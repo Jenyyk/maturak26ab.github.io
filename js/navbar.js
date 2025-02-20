@@ -4,7 +4,7 @@ import { initPreload } from './preload.js';
 /**
  * Inserts navbar into DOM and handles secondary functionalities associated with it.
  * 
- * Simple single line implementation featuring sponsors subpage including preload and camel:
+ * @example Simple single line implementation featuring sponsors subpage including preload and camel:
  * ```js
  *  <script type="module">import('/js/navbar.js').then(nb => nb.insertNavbar('sponsors'));</script>
  * ```

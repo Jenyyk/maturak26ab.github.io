@@ -86,11 +86,21 @@ body{
 @media (max-width: 600px) {
     #container {
         grid-template-columns: 1fr; /* Change to 1 column */
-        margin-left: 31.1vw;
-        margin-bottom: 75vw;
+        margin-left: 20vw;
+        margin-bottom: 110vw;
     }
     .contactCard {
-        width: 36vw; /* 3/4 of 48vw */
-        height: 11.25vw; /* 3/4 of 15vw */
+        width: 60vw; /* 3/4 of 48vw */
+        height: 19vw; /* 3/4 of 15vw */
+    }
+    .contactName {
+        align-self: flex-start;
+        font-weight: bold;
+        font-size: 3vw; /* 3/4 of 2vw */
+        margin-bottom: 2%;
+    }
+
+    .contactDescription {
+        font-size: 2.25vw; /* 3/4 of 1.5vw */
     }
 }

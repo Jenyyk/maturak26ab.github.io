@@ -124,6 +124,17 @@ a {
 #footer > img {
   width: 100%;
 }
+#footer > div {
+  margin: 0;
+  top: -5px;
+  position: relative;
+
+  background-color: #F9C561;
+  padding: 40px 120px;
+}
+#footer > div > p {
+  margin: 0;
+}
 
 
 /* SUBSTITURE FOR <hr> WITH ACCENT COLOR */

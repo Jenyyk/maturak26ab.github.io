@@ -16,7 +16,7 @@
     position: absolute;
     background-size: cover;
     margin-top: 10px;
-    margin-left: 80vw;
+    margin-left: 75vw;
 }
 
 .eventCard {
@@ -24,8 +24,8 @@
   align-items: center;
   gap: 15px;
 
-  width: 70%;
-  margin-left: 5vw;
+  width: 60%;
+  margin-left: 10vw;
   margin-bottom: 20px;
   padding: 15px;
 
@@ -36,6 +36,11 @@
 
   font-size: 1.2em;
   color: var(--contrast-color-light);
+    transition: transform 200ms ease-out;
+}
+
+.eventCard:hover{
+    transform: scale(1.03);
 }
 
 .eventTime {

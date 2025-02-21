@@ -120,13 +120,15 @@ a {
 /* EVERY PAGE HAS A FOOTER */
 #footer {
   width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
 #footer > img {
   width: 100%;
 }
 #footer > div {
   margin: 0;
-  top: -5px;
+  top: -1px;
   position: relative;
 
   background-color: #F9C561;

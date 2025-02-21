@@ -2,16 +2,21 @@
     position: fixed;
     margin: 2vh 5vw;
 }
-
-.bottomImage {
-    margin-top: 10vw;
-    position: relative;
+.offset {
+    display: block;
+    height: 2vh;
+    width: 100%;
+}
+#sideImage {
+    background-image: url("../assets/map.svg");
+    height: 1055px;
+    width: 223px;
     display: flex;
-    align-items: center;
+
+    position: absolute;
     background-size: cover;
-    width: 100vw;
-    height: 14vw;
-    background-image: url("../assets/bottomImage.png");
+    margin-top: 10px;
+    margin-left: 80vw;
 }
 
 .eventCard {
@@ -19,9 +24,9 @@
   align-items: center;
   gap: 15px;
 
-  width: 80%;
-  max-width: 900px;
-  margin: 20px 5vw;
+  width: 70%;
+  margin-left: 5vw;
+  margin-bottom: 20px;
   padding: 15px;
 
   background: var(--secondary-color-light);
@@ -98,7 +103,7 @@
     width: 100vw;  /* Always full width */
     height: auto;  /* Allow height to adjust */
     min-height: 60vw; /* Ensures visibility on tall screens */
-    
+
     background-size: contain; /* Ensures the whole image is visible */
     background-repeat: no-repeat; /* Prevents tiling */
 }

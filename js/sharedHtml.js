@@ -1,12 +1,21 @@
 import { initCamel } from './camel.js';
 import { initPreload } from './preload.js';
 
+
+// This monstrosity gets the file name dynamically, so no need to type it in every file
+const file = location.pathname.split("/").pop().split(".")[0] || "index";
+await createNavbar(file);
+// Inserts footer from footer.html
+await insertFooter();
+
+
+
 /**
  * Inserts navbar into DOM and handles secondary functionalities associated with it.
  *
  * Simple single line implementation featuring sponsors subpage including preload and camel:
  * ```js
- *  <script type="module">import('/js/navbar.js').then(nb => nb.insertNavbar('sponsors'));</script>
+ *  <script src="/js/sharedHtml.js" type="module"></script>
  * ```
  * @param {*} selectedPage
  */
@@ -47,6 +56,13 @@ async function insertNavbar(selectedPage) {
         });
 }
 
-// This monstrosity gets the file name dynamically, so no need to type it in every file
-const file = location.pathname.split("/").pop().split(".")[0] || "index";
-await createNavbar(file);
+async function insertFooter() {
+  await fetch('/footer.html')
+      .then(response => response.text())
+      .then(data => {
+          const footerDoc = new DOMParser().parseFromString(data, 'text/html');
+          const footer = footerDoc.querySelector('footer');
+
+          document.body.appendChild(footer);
+      })
+}

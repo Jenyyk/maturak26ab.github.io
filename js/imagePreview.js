@@ -1,21 +1,80 @@
-// SCRIPT TO MAGNIFY IMAGE ON-CLICK
+// SCRIPT TO MAGNIFY IMAGE ON-CLICK AND NAVIGATE WITH ARROW KEYS
 
-// Apply to all images with the .preview class
 document.querySelectorAll("img.preview").forEach((imageElement) => {
-  // add a click listener to each of them
   imageElement.addEventListener("click", () => {
     // Create an Image pop-up holder
     const popupImage = document.createElement("div");
     popupImage.setAttribute("class", "popupImage");
-    // Removes it on second click
-    popupImage.addEventListener("click", () => { popupImage.remove(); })
 
     // Create the pop-up image
     const popupRender = document.createElement("img");
-    // Gets source of original image
     popupRender.setAttribute("src", imageElement.getAttribute("src"));
     popupImage.appendChild(popupRender);
 
     document.body.appendChild(popupImage);
-  })
-})
+
+    let images = Array.from(document.querySelectorAll("img.preview")); // Get all images
+    let currentIndex = images.indexOf(imageElement); // Track the current image index
+
+    // Close on click
+    popupImage.addEventListener("click", closePopup);
+    // Listen for key events
+    document.addEventListener("keydown", keyHandler);
+
+    // Create arrow buttons
+    const leftArrow = document.createElement("div");
+    const rightArrow = document.createElement("div");
+
+    Object.assign(leftArrow.style, {
+      borderRight: "60px solid var(--accent-color-light)",
+      borderTop: "40px solid transparent",
+      borderBottom: "40px solid transparent",
+      position: "fixed",
+      bottom: "20px",
+      left: "20px",
+      zIndex: "6",
+      cursor: "pointer",
+    });
+    Object.assign(rightArrow.style, {
+      borderLeft: "60px solid var(--accent-color-light)",
+      borderTop: "40px solid transparent",
+      borderBottom: "40px solid transparent",
+      position: "fixed",
+      bottom: "20px",
+      right: "20px",
+      zIndex: "6",
+      cursor: "pointer",
+    });
+
+    leftArrow.addEventListener("click", () => updateImage(currentIndex - 1));
+    rightArrow.addEventListener("click", () => updateImage(currentIndex + 1));
+
+    document.body.appendChild(leftArrow);
+    document.body.appendChild(rightArrow);
+
+
+    function keyHandler(event) {
+      if (event.key === "ArrowRight") {
+        updateImage(currentIndex + 1);
+      } else if (event.key === "ArrowLeft") {
+        updateImage(currentIndex - 1);
+      } else if (event.key === "Escape") {
+        closePopup();
+      }
+    }
+
+    function updateImage(newIndex) {
+      if (newIndex >= 0 && newIndex < images.length) {
+        currentIndex = newIndex;
+        popupRender.setAttribute("src", images[currentIndex].getAttribute("src"));
+      }
+    }
+
+    function closePopup() {
+      popupImage.remove();
+      leftArrow.remove();
+      rightArrow.remove();
+      document.removeEventListener("keydown", keyHandler);
+    }
+  });
+});

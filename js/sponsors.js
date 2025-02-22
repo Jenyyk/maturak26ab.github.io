@@ -6,7 +6,6 @@ const sheetJson = XLSX.utils.sheet_to_json(sheet);
 
 const arrangedSponsorships = sheetJson.filter(item => item.stav === 'domluveno');
 const sponsors = arrangedSponsorships.map(item => item['jméno společnosti ']);
-console.log(sponsors);
 
 const sponsorsContainer = document.querySelector('#sponsors');
 sponsors.forEach(sponsor => {

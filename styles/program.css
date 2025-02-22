@@ -120,7 +120,7 @@
     opacity:0.5;
 }
 
-@media (max-width: 950px){
+@media (max-aspect-ratio: 1/1){
     #sideImage{
         display: none;
     }

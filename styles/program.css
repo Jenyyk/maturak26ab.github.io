@@ -122,3 +122,12 @@
     min-height: 80px;
     opacity:0.5;
 }
+
+@media (max-width: 950px){
+    #sideImage{
+        display: none;
+    }
+    .eventCard{
+        width: 78%;
+    }
+}

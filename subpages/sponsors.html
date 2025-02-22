@@ -29,13 +29,6 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" integrity="sha512-r22gChDnGvBylk90+2e/ycr3RVrDi8DIOkIGNhJlKfuyQM4tIRAI062MaV8sfjQKYVGjOBaZBOA87z+IhZE9DA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="module">
-      const file = await fetch('/mock/sponsors_mock.xlsx').then(response => response.arrayBuffer());
-      const workbook = XLSX.read(file, {type: 'array'});
-      const sheet = workbook.Sheets['Oslovované firmy'];
-      const sheetJson = XLSX.utils.sheet_to_json(sheet);
-
-      console.log(sheetJson.filter(item => item.stav === 'domluveno '));
-    </script>
+    <script src="/js/sponsors.js" type="module"></script>
   </body>
 </html>

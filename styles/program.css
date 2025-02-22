@@ -84,15 +84,12 @@
 
     width: 40vw;
     height: 10vh;
-    /*box-shadow: -0.4vh -0.4vh #A9A9A9;*/
     background-color: #D3D3D3;
+    background-color: rgba(211,211,211,0.7);
     border-radius: 10px;
     color: #D3D3D3;
     background: linear-gradient(140deg, #00000020 55%, #ffffff40 85%);
     backdrop-filter: blur(14px);
-    opacity: 0.7;
-    /*border-style: solid;
-    border-color: #505000;*/
 }
 
 #title {

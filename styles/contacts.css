@@ -85,7 +85,7 @@ body{
     font-size: 1.125vw; /* 3/4 of 1.5vw */
 }
 
-@media (max-width: 800px) {
+@media (max-aspect-ratio: 1/1) {
     #container {
         grid-template-columns: 1fr; /* Change to 1 column */
         margin-left: 20vw;

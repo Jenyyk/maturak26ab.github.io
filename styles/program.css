@@ -1,7 +1,22 @@
 #topBar {
     position: fixed;
-    margin-left: 10%;
-    margin: 0 5vw;
+    margin: 2vh 5vw;
+}
+.offset {
+    display: block;
+    height: 2vh;
+    width: 100%;
+}
+#sideImage {
+    background-image: url("../assets/map.svg");
+    height: 1055px;
+    width: 223px;
+    display: flex;
+
+    position: absolute;
+    background-size: cover;
+    margin-top: 10px;
+    margin-left: 75vw;
 }
 
 .eventCard {
@@ -9,9 +24,9 @@
   align-items: center;
   gap: 15px;
 
-  width: 80%;
-  max-width: 900px;
-  margin: 20px 5vw;
+  width: 60%;
+  margin-left: 10vw;
+  margin-bottom: 20px;
   padding: 15px;
 
   background: var(--secondary-color-light);
@@ -21,6 +36,11 @@
 
   font-size: 1.2em;
   color: var(--contrast-color-light);
+    transition: transform 200ms ease-out;
+}
+
+.eventCard:hover{
+    transform: scale(1.03);
 }
 
 .eventTime {
@@ -55,7 +75,7 @@
     flex-direction: column;
     align-items: center;
 
-    margin-top: 50vh;
+    margin-top: 25vw;
     margin-left: 30vw;
 
     justify-content: center;
@@ -68,7 +88,6 @@
     background-color: #D3D3D3;
     border-radius: 10px;
     color: #D3D3D3;
-    blur: (14px);
     background: linear-gradient(140deg, #00000020 55%, #ffffff40 85%);
     backdrop-filter: blur(14px);
     opacity: 0.7;
@@ -84,18 +103,16 @@
 
 .topImage {
     background-image: url("../assets/programTopImage.png");
-    display:flex;
+    display: flex;
     position: relative;
-    width: 100%;
-    height: 100vh;
-    margin-bottom: 10vh;
+    width: 100vw;  /* Always full width */
+    height: auto;  /* Allow height to adjust */
+    min-height: 60vw; /* Ensures visibility on tall screens */
 
-     background-size: 100% 100%; /* Forces the image to fill the container and stretch */
-        background-position: center;
-        background-repeat: no-repeat;
-
-    /*object-fit: fill;*/
+    background-size: contain; /* Ensures the whole image is visible */
+    background-repeat: no-repeat; /* Prevents tiling */
 }
+
 
 #taskBar {
     position: absolute;

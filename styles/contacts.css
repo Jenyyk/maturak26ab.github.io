@@ -1,0 +1,106 @@
+body{
+    background: #fffcf1;
+    background: linear-gradient(350deg, rgba(255,128,0,1) 0%, rgba(255,162,0,1) 4%, rgba(12,0,210,1) 80%);
+}
+
+.star {
+    position:absolute;
+    width: 2vw;
+    height: 2vw;
+    display: flex;
+    background-size: contain;
+    background-image: url("../assets/star.svg");
+}
+
+.star:nth-child(1) {
+    left: 10vw;
+    top: 10vh;
+}
+
+.star:nth-child(2) {
+    left: 25vw;
+    top: 13vh;
+}
+
+.star:nth-child(3) {
+    left: 45vw;
+    top: 16vh;
+}
+
+.star:nth-child(4) {
+    left: 65vw;
+    top: 12vh;
+}
+
+.star:nth-child(5) {
+    left: 25vw;
+    top: 14vh;
+}
+
+#container {
+    margin: auto;
+    width: 52.5vw;
+    height: 28.875vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4vw;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+}
+
+.contactCard {
+    border-radius: 0 0 0 5px;
+    display: flex;
+    background-color: rgba(255,255,255,0.2);
+
+    width: 26.25vw; /* 3/4 of 35vw */
+    height: 8.025vw; /* 3/4 of 10.7vw */
+    align-items: center;
+}
+
+.contactCard img {
+    margin-left: 1.5%;
+    margin-right: 3%;
+    width: 22%; /* 3/4 of 22% */
+    height: 90%; /* 3/4 of 90% */
+}
+
+.contactCard > div {
+    display: flex;
+    flex-direction: column; /* Stack name and description vertically */
+    justify-content: center;
+    width: 70%; /* Takes up remaining space */
+}
+
+.contactName {
+    align-self: flex-start;
+    font-weight: bold;
+    font-size: 1.5vw; /* 3/4 of 2vw */
+    margin-bottom: 1%;
+}
+
+.contactDescription {
+    font-size: 1.125vw; /* 3/4 of 1.5vw */
+}
+
+@media (max-width: 600px) {
+    #container {
+        grid-template-columns: 1fr; /* Change to 1 column */
+        margin-left: 20vw;
+        margin-bottom: 110vw;
+    }
+    .contactCard {
+        width: 60vw; /* 3/4 of 48vw */
+        height: 19vw; /* 3/4 of 15vw */
+    }
+    .contactName {
+        align-self: flex-start;
+        font-weight: bold;
+        font-size: 3vw; /* 3/4 of 2vw */
+        margin-bottom: 2%;
+    }
+
+    .contactDescription {
+        font-size: 2.25vw; /* 3/4 of 1.5vw */
+    }
+}

@@ -3,13 +3,14 @@
   <head>
     <title>Arabská noc 2026</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.1">
     <link rel="icon" href="/assets/favicon.png">
     <!-- Every page has a shared and individual stylesheet! -->
     <link rel="stylesheet" href="/sharedStyles.css">
     <link rel="stylesheet" href="/styles/program.css">
   </head>
 <body>
-    <script type="module">import('/js/navbar.js').then(nb => nb.createNavbar('program'));</script>
+    <script src="/js/sharedHtml.js" type="module"></script>
 
     <div id="navBackground"></div>
 
@@ -22,6 +23,7 @@
         </div>
     </div>
 
+    <div id="sideImage"></div>
     <div class="eventCard">
         <div class="eventTime">17:00</div>
         <div class="eventInfo">
@@ -69,6 +71,39 @@
             <div class="eventDescription">Shrnutí události a poděkování účastníkům.</div>
         </div>
     </div>
+    <div class="eventCard">
+        <div class="eventTime">19:00</div>
+        <div class="eventInfo">
+            <div class="eventTitle">Kulturní vystoupení</div>
+            <div class="eventDescription">Umělecké představení zahrnující hudbu a tanec.</div>
+        </div>
+    </div>
+
+    <div class="eventCard">
+        <div class="eventTime">20:00</div>
+        <div class="eventInfo">
+            <div class="eventTitle">Přestávka a občerstvení</div>
+            <div class="eventDescription">Možnost odpočinku a občerstvení pro účastníky.</div>
+        </div>
+    </div>
+
+    <div class="eventCard">
+        <div class="eventTime">21:00</div>
+        <div class="eventInfo">
+            <div class="eventTitle">Panelová diskuze</div>
+            <div class="eventDescription">Otevřená debata s odborníky a hosty.</div>
+        </div>
+    </div>
+
+    <div class="eventCard">
+        <div class="eventTime">22:00</div>
+        <div class="eventInfo">
+            <div class="eventTitle">Závěrečný program</div>
+            <div class="eventDescription">Shrnutí události a poděkování účastníkům.</div>
+        </div>
+    </div>
+
+    <div class="offset"></div>
 
   </body>
 </html>

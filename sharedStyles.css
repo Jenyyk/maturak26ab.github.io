@@ -5,12 +5,6 @@
   --secondary-color-light: #e9f5fe;
   --accent-color-light: #f3b700;
   --contrast-color-light: #0f1e3d;
-
-  /* DARK MODE (implementuju pozdějc) */
-  --main-color-dark: #252525;
-  --secondary-color-dark: ;
-  --accent-color-dark: #308280;
-  --contrast-color-dark: ;
 }
 @font-face {
   font-family: "Roboto";
@@ -22,11 +16,14 @@ html {
   font-size: 100%;
 }
 body {
-  background-color: var(--background-color-light);
+  background-color: var(--main-color-light);
 
   margin: 0;
+
+  overflow-x: hidden;
 }
 * {
+  color: var(--contrast-color-light);
   font-family: Roboto;
 }
 a {
@@ -94,7 +91,7 @@ a {
 .navElement::before {
   content: "";
   position: absolute;
-  top: 80%;
+  top: 100%;
   left: 25%;
   z-index: -1;
 
@@ -114,6 +111,29 @@ a {
   font-size: 1.8em;
   color: var(--secondary-color-light);
 }
+
+/* EVERY PAGE HAS A FOOTER */
+#footer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+#footer > img {
+  width: 100%;
+  pointer-events: none;
+}
+#footer > div {
+  margin: 0;
+  top: -1px;
+  position: relative;
+
+  background-color: #F9C561;
+  padding: 40px 120px;
+}
+#footer > div > p {
+  margin: 0;
+}
+
 
 /* SUBSTITURE FOR <hr> WITH ACCENT COLOR */
 div.breakLine {
@@ -148,4 +168,7 @@ div.breakLine {
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
+}
+.preview {
+  cursor: zoom-in;
 }

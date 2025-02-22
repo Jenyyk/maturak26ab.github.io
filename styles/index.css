@@ -65,9 +65,11 @@
 }
 #buyTicketDiv > h2 {
   font-size: 1.8em;
+  color: var(--main-color-light);
 }
 #buyTicketDiv > p {
   font-size: 1.2em;
+  color: var(--main-color-light);
 }
 
 #mainTextDiv {
@@ -92,6 +94,7 @@
   background-size: cover;
   background-position: center;
   filter: blur(14px);
+  opacity: 0.4;
 }
 #trailerDiv {
   display: flex;
@@ -126,6 +129,7 @@
   width: 19%;
   transition: all 600ms ease-out;
   border: 0.5vw solid transparent;
+  border-radius: calc(0.5vw + 12px);
 }
 /* BRUTE FORCING NICE HOVER EFFECT  */
 #bottomGalleryDiv:has(img:hover) img:not(:hover) {

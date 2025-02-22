@@ -7,17 +7,17 @@ export function initPreload() {
   document.querySelectorAll("a").forEach((link) => {
     // Add a listener for hovering
     link.addEventListener("mouseover", () => {
-      // Search for present prefetch link in the head to avoid duplicates
-      if (!document.head.querySelector(`link[href="${link.getAttribute("href")}"]`)) {
-        // Prefetch its target on hover
-        const preloadLink = document.createElement("link");
+      // Cancel creating link element if one already exists
+      if (link.dataset.fetched === "true") { return; }
+      // Prefetch its target on hover
+      const preloadLink = document.createElement("link");
 
-        preloadLink.setAttribute("rel", "prefetch");
-        preloadLink.setAttribute("href", link.getAttribute("href"));
+      preloadLink.setAttribute("rel", "prefetch");
+      preloadLink.setAttribute("href", link.getAttribute("href"));
 
-        document.head.appendChild(preloadLink);
-      }
+      document.head.appendChild(preloadLink);
+
+      link.dataset.fetched = "true";
     })
   })
 }
-

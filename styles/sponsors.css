@@ -1,3 +1,7 @@
+body {
+    background: linear-gradient(-7deg, rgba(255, 162, 0, 0.4) 27%, 50%, rgb(40, 0, 90));
+}
+
 h1, h2 {
     text-align: center;
 }
@@ -22,7 +26,7 @@ hr {
 .carpet {
     min-height: 50px;
     color: white;
-    background-image: url("/assets/carpet_2_sat.png");
+    background-image: url('/assets/carpet_2_sat.png');
     background-repeat: repeat-x;
     border: none;
 }
@@ -31,10 +35,18 @@ hr {
     padding: 0 10%;
 }
 
-.sponsor {
+#superiorSponsorHeading::after {
+    content: 'Generální partner';
+    font-size: 0.65em;
+    display: block;
+    text-align: center;
+}
+
+#superiorSponsor {
     display: grid;
     grid-auto-columns: auto;
     gap: 2rem;
+    align-items: center;
 }
 
 .sponsor > * {
@@ -47,4 +59,13 @@ hr {
 
 .sponsorInfo {
     grid-column: 2;
+}
+
+.sponsors {
+    display: flex;
+    flex-direction: column;
+}
+
+.minorSponsor {
+    text-align: center;
 }

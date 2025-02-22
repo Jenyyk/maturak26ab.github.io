@@ -46,10 +46,11 @@ body{
     gap: 2.4vw;
     margin-top: 5vw;
     margin-bottom: 5vw;
+
 }
 
 .contactCard {
-    border-radius: 0 0 0 5px;
+    border-radius: 0 0 0 15px;
     display: flex;
     background-color: rgba(255,255,255,0.2);
 
@@ -63,6 +64,7 @@ body{
     margin-right: 3%;
     width: 22%; /* 3/4 of 22% */
     height: 90%; /* 3/4 of 90% */
+    border-radius: 0 0 0 10px;
 }
 
 .contactCard > div {
@@ -83,7 +85,7 @@ body{
     font-size: 1.125vw; /* 3/4 of 1.5vw */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     #container {
         grid-template-columns: 1fr; /* Change to 1 column */
         margin-left: 20vw;

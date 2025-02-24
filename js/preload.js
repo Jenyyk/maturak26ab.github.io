@@ -6,9 +6,7 @@ export function initPreload() {
   // Gets all <a> tags
   document.querySelectorAll("a").forEach((link) => {
     // Add a listener for hovering
-    link.addEventListener("mouseover", () => {
-      // Cancel creating link element if one already exists
-      if (link.dataset.fetched === "true") { return; }
+    const handleHover = () => {
       // Prefetch its target on hover
       const preloadLink = document.createElement("link");
 
@@ -16,8 +14,10 @@ export function initPreload() {
       preloadLink.setAttribute("href", link.getAttribute("href"));
 
       document.head.appendChild(preloadLink);
+      // Removes listener after prefetch is created
+      link.removeEventListener("mouseover", handleHover);
+    }
 
-      link.dataset.fetched = "true";
-    })
+    link.addEventListener("mouseover", handleHover);
   })
 }

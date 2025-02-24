@@ -12,8 +12,8 @@ function newStar() {
   starElement.style.aspectRatio = "1";
   starElement.style.width  = `${size}px`;
   starElement.style.height = `${size}px`;
-  starElement.style.top    = `${randRange(0, document.documentElement.scrollHeight)}px`;
-  starElement.style.left   = `${randRange(0, 100)}vw`;
+  starElement.style.top    = `${randRange(100, document.body.scrollHeight - 160)}px`;
+  starElement.style.left   = `${randRange(100, document.body.scrollWidth - 160)}px`;
   starElement.style.zIndex = -1;
 
   document.body.appendChild(starElement);

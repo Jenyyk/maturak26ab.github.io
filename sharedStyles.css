@@ -112,6 +112,11 @@ a {
   color: var(--secondary-color-light);
 }
 
+@media (max-width: 1200px) {
+  .navElement a { font-size: 1em !important; }
+  #navIconDiv { top: -30%; width: 30%; left: 30%; }
+}
+
 /* EVERY PAGE HAS A FOOTER */
 #footer {
   width: 100vw;

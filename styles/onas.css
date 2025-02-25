@@ -6,8 +6,12 @@
   font-size: 3em;
   text-align: center;
 }
-#mainAboutDiv > p {
+#mainAboutDiv p {
   font-size: 1.2em;
+}
+@media (max-width: 1200px) {
+  #mainAboutDiv { width: 80% !important; }
+  #mainAboutDiv p { font-size: 1.1em !important;}
 }
 
 #showcaseImageDiv {
@@ -25,4 +29,7 @@
 }
 #showcaseImageDiv:has(img:hover) img:not(:hover) {
   opacity: 0.6;
+}
+@media (max-width: 1200px) {
+  #showcaseImageDiv { columns: 2; }
 }

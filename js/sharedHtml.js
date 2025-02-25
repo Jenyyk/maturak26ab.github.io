@@ -42,8 +42,11 @@ async function insertNavbar(selectedPage) {
             const navBarDoc = new DOMParser().parseFromString(data, 'text/html');
             const navBar = navBarDoc.querySelector('nav');
 
+
+
             navBar.querySelectorAll('.navElement').forEach(navElem => {
                 const href = navElem.querySelector('a').href;
+                navElem.addEventListener("click", () => { window.location.href = href });
 
                 if (href.includes(selectedPage)) {
                     const navTriangle = navBarDoc.createElement('div');

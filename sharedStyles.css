@@ -79,9 +79,14 @@ a {
 .navElement {
   position: relative;
   width: 18vw;
+  height: 100%;
 
   text-align: center;
   border-left: 1px solid var(--accent-color-light);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /* FIRST NAVELEMENT HAS NO BORDER */
 #topBar > :first-child {

@@ -1,17 +1,18 @@
 body {
-    background: linear-gradient(-7deg, rgba(255, 162, 0, 0.4) 27%, 50%, rgb(40, 0, 90));
+    background: linear-gradient(-7deg, rgba(255, 162, 0, 0.4) 27%, 65%, rgb(40, 0, 90));
 }
 
-h1, h2 {
+h1, h2, h3 {
     text-align: center;
 }
 
-h1 {
-    margin-top: 4rem;
+h1.headingLight {
+    color: var(--horizon-sky-light);
 }
 
-h2 {
-    margin-top: 0;
+h2.headingLight,
+h3.headingLight {
+    color: var(--horizon-sky-subdued);
 }
 
 p {
@@ -24,28 +25,52 @@ hr {
 }
 
 .carpet {
-    min-height: 50px;
-    color: white;
+    height: 6rem;
+    width: 100vw;
+    position: relative;
+    left: -10vw;
     background-image: url('/assets/carpet_2_sat.png');
     background-repeat: repeat-x;
+    image-rendering: pixelated;
+    background-size: auto 100%;
     border: none;
 }
 
-.mainContent {
-    padding: 0 10%;
+#mainContent {
+    padding: 2rem 10vw 4rem 10vw;
 }
 
-#superiorSponsorHeading::after {
-    content: 'Generální partner';
-    font-size: 0.65em;
-    display: block;
-    text-align: center;
+#mainContent > * {
+    margin-top: 4rem;
 }
 
-#superiorSponsor {
+.container > *:first-child {
+    margin-top: 0 !important;
+}
+
+.container > *:last-child {
+    margin-bottom: 0 !important;
+}
+
+.horizonSky {
+    padding: 2rem;
+    border-radius: 0.5rem;
+    background: linear-gradient(-10deg, var(--horizon-sky-light), var(--horizon-sky-subdued));
+}
+
+.headingWithNote {
+    margin-bottom: 0;
+}
+
+.headingNote {
+    margin-top: 0;
+    margin-bottom: 1.5em;
+}
+
+#superiorSponsorGrid {
     display: grid;
-    grid-auto-columns: auto;
-    gap: 2rem;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
     align-items: center;
 }
 
@@ -54,18 +79,34 @@ hr {
 }
 
 .sponsorImage {
-    grid-column: 1;
+    float: left;
+    margin: 0 2em 2em 0;
+}
+
+/* uprimne sam nevim jak to funguje, ale ten obtékaný obrázek zůstane ve svém divu*/
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .sponsorInfo {
     grid-column: 2;
 }
 
-.sponsors {
-    display: flex;
-    flex-direction: column;
+#otherSponsorsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 0.5em;
 }
 
 .minorSponsor {
     text-align: center;
+    margin: 0;
+}
+
+@media (max-width: 750px) {
+    #otherSponsorsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

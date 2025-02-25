@@ -19,23 +19,6 @@ p {
     text-align: justify;
 }
 
-hr {
-    border-top: 2px solid var(--accent-color-light);
-    margin-bottom: 2rem;
-}
-
-.carpet {
-    height: 6rem;
-    width: 100vw;
-    position: relative;
-    left: -10vw;
-    background-image: url('/assets/carpet_2_sat.png');
-    background-repeat: repeat-x;
-    image-rendering: pixelated;
-    background-size: auto 100%;
-    border: none;
-}
-
 #mainContent {
     padding: 2rem 10vw 4rem 10vw;
 }

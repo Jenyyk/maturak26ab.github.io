@@ -5,7 +5,7 @@
   --secondary-color-light: #e9f5fe;
   --accent-color-light: #f3b700;
   --contrast-color-light: #0f1e3d;
-  
+
   --horizon-sky-light: rgba(255, 218, 153, 0.6);
   --horizon-sky-subdued: rgba(205, 175, 127, 0.5);
 }
@@ -172,4 +172,20 @@ div.breakLine {
 }
 .preview {
   cursor: zoom-in;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid var(--accent-color-light);
+  margin: 0.5rem 0;
+}
+
+.carpet {
+  height: 6rem;
+  width: 100vw;
+  background-image: url('/assets/carpet_2_sat.png');
+  background-repeat: repeat-x;
+  image-rendering: pixelated;
+  background-size: auto 100%;
+  border: none;
 }

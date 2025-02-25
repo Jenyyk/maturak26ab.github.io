@@ -2,11 +2,11 @@ import { initCamel } from './camel.js';
 import { initPreload } from './preload.js';
 
 
+// Inserts footer from footer.html
+await insertFooter();
 // This monstrosity gets the file name dynamically, so no need to type it in every file
 const file = location.pathname.split("/").pop().split(".")[0] || "index";
 await createNavbar(file);
-// Inserts footer from footer.html
-await insertFooter();
 
 
 
@@ -21,6 +21,8 @@ await insertFooter();
  */
 async function createNavbar(selectedPage) {
     await insertNavbar(selectedPage);
+    // Wait for full repaint (to update href attributes) before proceeding
+    await new Promise(requestAnimationFrame);
     initPreload();
     initCamel();
 }

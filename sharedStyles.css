@@ -138,6 +138,9 @@ a {
 #footer > div > p {
   margin: 0;
 }
+@media (max-width: 1200px) {
+  #footer > div { padding: 40px 20px !important; }
+}
 
 
 /* SUBSTITURE FOR <hr> WITH ACCENT COLOR */

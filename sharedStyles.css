@@ -114,7 +114,7 @@ a {
 
 @media (max-width: 1200px) {
   .navElement a { font-size: 1em !important; }
-  #navIconDiv { top: -30%; width: 30%; left: 30%; }
+  #navIconDiv { display: none !important; }
 }
 
 /* EVERY PAGE HAS A FOOTER */

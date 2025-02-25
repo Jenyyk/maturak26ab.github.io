@@ -72,6 +72,19 @@ p {
     display: table;
     clear: both;
 }
+@media (max-width: 650px) {
+
+    .sponsorImage {
+        float: none;
+        display: block;
+        margin: 0 auto 2em auto;
+    }
+
+    .clearfix::after {
+        display: initial;
+        clear: initial;
+    }
+}
 
 .sponsorInfo {
     grid-column: 2;

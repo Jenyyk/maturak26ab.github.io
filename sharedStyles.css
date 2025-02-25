@@ -61,7 +61,7 @@ a {
   width: 0;
   height: 0;
 
-  top: 95%;
+  top: calc(60% + 0.5em);
   left: 50%;
   transform: translateX(-50%);
 
@@ -82,34 +82,24 @@ a {
 .navElement {
   position: relative;
   width: 18vw;
+  height: 100%;
 
   text-align: center;
-  border-left: 1px solid var(--accent-color-light);
+  border-left: 1px dotted var(--accent-color-light);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(120deg, transparent 45%, #f3b70040 47%, transparent 49%);
+  background-size: 200%;
+  background-position: 110%;
 }
 /* FIRST NAVELEMENT HAS NO BORDER */
 #topBar > :first-child {
   border-left: none;
 }
-/* UNDERLINE HOVER EFFECT */
-.navElement::before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 25%;
-  z-index: -1;
 
-  width: 50%;
-  height: 3px;
-
-  background: linear-gradient(to right, var(--accent-color-light) 49%, transparent 50%);
-  background-size: 200%;
-
-  background-position: 100%;
-  transition: background-position 300ms ease-out;
-}
-.navElement:hover::before {
-  background-position: 0%;
-}
 .navElement a {
   font-size: 1.8em;
   color: var(--secondary-color-light);
@@ -117,7 +107,7 @@ a {
 
 @media (max-width: 1200px) {
   .navElement a { font-size: 1em !important; }
-  #navIconDiv { top: -30%; width: 30%; left: 30%; }
+  #navIconDiv { display: none !important; }
 }
 
 /* EVERY PAGE HAS A FOOTER */
@@ -140,6 +130,9 @@ a {
 }
 #footer > div > p {
   margin: 0;
+}
+@media (max-width: 1200px) {
+  #footer > div { padding: 40px 20px !important; }
 }
 
 

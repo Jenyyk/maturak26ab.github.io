@@ -76,13 +76,13 @@
     align-items: center;
 
     margin-top: 25vw;
-    margin-left: 30vw;
+    margin-left: 20vw;
 
     justify-content: center;
 
     top: 3vh;
 
-    width: 40vw;
+    width: 60vw;
     height: 10vh;
     background-color: #D3D3D3;
     background-color: rgba(211,211,211,0.7);
@@ -126,5 +126,7 @@
     }
     .eventCard{
         width: 78%;
+        margin-left: 11%;
+        box-sizing: border-box;
     }
 }

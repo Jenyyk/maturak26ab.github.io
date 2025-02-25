@@ -1,40 +1,6 @@
 body{
     background: #fffcf1;
-    background: linear-gradient(350deg, rgba(255,128,0,1) 0%, rgba(255,162,0,1) 4%, rgba(12,0,210,1) 80%);
-}
-
-.star {
-    position:absolute;
-    width: 2vw;
-    height: 2vw;
-    display: flex;
-    background-size: contain;
-    background-image: url("../assets/star.svg");
-}
-
-.star:nth-child(1) {
-    left: 10vw;
-    top: 10vh;
-}
-
-.star:nth-child(2) {
-    left: 25vw;
-    top: 13vh;
-}
-
-.star:nth-child(3) {
-    left: 45vw;
-    top: 16vh;
-}
-
-.star:nth-child(4) {
-    left: 65vw;
-    top: 12vh;
-}
-
-.star:nth-child(5) {
-    left: 25vw;
-    top: 14vh;
+    background: linear-gradient(350deg, rgba(255,128,0,1) 0%, rgba(255,162,0,0.8) 4%, rgba(100,0,150,0.9) 50%, rgba(12,0,170,1) 100%);
 }
 
 #container {

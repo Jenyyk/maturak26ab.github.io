@@ -31,8 +31,8 @@
 }
 
 @media (max-width: 1200px) {
-  #mainImageDiv { height: 40vh !important; min-height: 0; }
-  #mainTextParent { height: 80%; padding: 10px; }
+  #mainImageDiv { height: 40vh !important; min-height: 0 !important; }
+  #mainTextParent { width: 80% !important; padding: 10px !important; }
   #mainTextParent > h1 { font-size: 2em !important; margin: 0 !important; }
   #mainTextParent > p { font-size: 1em !important; }
 }
@@ -81,11 +81,10 @@
   font-size: 1.2em;
   color: var(--main-color-light);
 }
-
 @media (max-width: 1200px) {
-  #buyTicketDiv { margin: 0; width: 80%; }
-  #buyTicketDiv > h2 { font-size: 1em; }
-  #buyTicketDiv > p { font-size: 0.8em; }
+  #buyTicketDiv { margin: 0 0 10px 0 !important; width: 80% !important; }
+  #buyTicketDiv > h2 { font-size: 1em !important; }
+  #buyTicketDiv > p { font-size: 0.8em !important; }
 }
 
 #mainTextDiv {
@@ -94,6 +93,10 @@
 }
 #mainTextDiv p {
   font-size: 1.2em;
+}
+@media (max-width: 1200px) {
+  #mainTextDiv { width: 80% !important; }
+  #mainTextDiv p { font-size: 1.1em !important; }
 }
 
 /* TRAILER DIV BACKGROUND */

@@ -1,3 +1,5 @@
+import keyTrap from './mousetrap.js';
+
 // Constants
 const camelSpeed = 100 / 1000;
 const sizeModifier = 3;
@@ -31,13 +33,8 @@ let camelPosX = 50,
   sleep = false,
   camelExists = false;
 
-// Only to be called once the navbar is initialized and inserted into the DOM
-export function initCamel() {
-  // Camel is an easter egg, and only spawns when certain conditions are met
-  document.getElementById("navIconDiv").addEventListener("dblclick", (e) => {
-    if (e.altKey && e.ctrlKey && !camelExists) { newCamel(); }
-  })
-}
+// Create the camel Easter Egg
+keyTrap.bind("velvloud", () => newCamel());
 
 // debugging purposes
 // newCamel()

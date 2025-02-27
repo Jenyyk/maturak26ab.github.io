@@ -1,4 +1,3 @@
-import { initCamel } from './camel.js';
 import { initPreload } from './preload.js';
 
 
@@ -24,7 +23,6 @@ async function createNavbar(selectedPage) {
     // Wait for full repaint (to update href attributes) before proceeding
     await new Promise(requestAnimationFrame);
     initPreload();
-    initCamel();
 }
 
 /**

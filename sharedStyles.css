@@ -43,17 +43,29 @@ a {
   align-items: center;
 
   position: sticky;
-  top: 5px;
+  top: 0;
   z-index: 1;
-  width: 90vw;
+  width: 100vw;
   height: 8vh;
   min-height: 80px;
-  margin: 20px auto;
+  /* margin: 20px auto; */
 
-  background: var(--contrast-color-light);
-  border: 2px solid var(--accent-color-light);
-  border-radius: 12px;
-  box-shadow: inset 0 0 30px 5px #ffffff60;
+  /* background: #172f61; */
+  background: url("/assets/carpet_2_sat.png"), linear-gradient(to left, var(--contrast-color-light), var(--contrast-color-light));
+  image-rendering: pixelated;
+  background-size: clamp(160px, 16vh, 16vh);
+  box-shadow: inset 0 0 40px 30px #00000080,
+      0 0 20px 10px #000000;
+
+  border-bottom: 2px solid var(--accent-color-light);
+  border-radius: 0 0 12px 12px;
+  animation: carpetFly 3000ms linear infinite forwards;
+  animation-play-state: paused;
+}
+#topBar:hover { animation-play-state: running; }
+@keyframes carpetFly {
+  from { background-position: 0 0; }
+  to   { background-position: 16vh 0; }
 }
 
 #navTriangle {
@@ -65,9 +77,9 @@ a {
   left: 50%;
   transform: translateX(-50%);
 
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 8px solid var(--accent-color-light);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 12px solid var(--accent-color-light);
 }
 #navIconDiv {
   position: absolute;
@@ -81,19 +93,15 @@ a {
 }
 .navElement {
   position: relative;
-  width: 18vw;
+  width: 20%;
   height: 100%;
 
   text-align: center;
-  border-left: 1px dotted var(--accent-color-light);
+  border-left: 2px dotted var(--accent-color-light);
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background: linear-gradient(120deg, transparent 45%, #f3b70040 47%, transparent 49%);
-  background-size: 200%;
-  background-position: 110%;
 }
 /* FIRST NAVELEMENT HAS NO BORDER */
 #topBar > :first-child {
@@ -103,6 +111,20 @@ a {
 .navElement a {
   font-size: 1.8em;
   color: var(--secondary-color-light);
+}
+.navElement > a::before {
+  content: "";
+  position: absolute;
+  inset: 20%;
+  border-radius: 20px;
+  background-color: var(--accent-color-light);
+  z-index: -1;
+
+  opacity: 0;
+  transition: opacity 400ms ease-out;
+}
+.navElement:hover > a::before {
+  opacity: 0.8;
 }
 
 @media (max-width: 1200px) {

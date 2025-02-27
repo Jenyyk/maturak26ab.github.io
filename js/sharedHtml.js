@@ -50,22 +50,6 @@ async function insertNavbar(selectedPage) {
                 const href = navElem.querySelector('a').href;
                 // Makes the entire navElement be a link
                 navElem.addEventListener("click", () => { window.location.href = href });
-                // Yes i HAD to move the nice hover effect into javascript, dont ask
-                navElem.addEventListener("mouseover", async () => {
-                  if (navElem.animRunning) { return; }
-                  navElem.animRunning = true;
-                  const anim = navElem.animate([
-                    { backgroundPosition: "110%" },
-                    { backgroundPosition: "-20%" }
-                  ],{
-                    duration: 500,
-                    easing: "linear",
-                    fill: "forwards"
-                  })
-                  await anim.finished;
-                  navElem.animRunning = false;
-                });
-                // End of Jeníkovo blbosti
 
                 if (href.includes(selectedPage)) {
                     const navTriangle = navBarDoc.createElement('div');

@@ -34,7 +34,7 @@ let camelPosX = 50,
   camelExists = false;
 
 // Create the camel Easter Egg
-keyTrap.bind("velvloud", () => newCamel());
+keyTrap.bind("velvloud", () => { if (!camelExists) newCamel(); });
 
 // debugging purposes
 // newCamel()

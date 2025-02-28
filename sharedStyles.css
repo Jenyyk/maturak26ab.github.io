@@ -34,20 +34,25 @@ a {
   /* text-decoration: none; */
 }
 
+.stackingContainer {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+}
 
+.stackingContainer > * {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
 
-/* EVERY PAGE HAS A NAVBAR */
-#topBar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
+#navbarContainer {
   position: sticky;
   top: 0;
   z-index: 1;
   width: 100vw;
   height: 8vh;
   min-height: 80px;
+
   /* margin: 20px auto; */
 
   background: #172f61;
@@ -58,12 +63,30 @@ a {
   border-radius: 0 0 12px 12px;
 }
 
+
+#navbarShadow {
+  height: 125%;
+  z-index: 2;
+  background: linear-gradient(180deg, #0006 55%, transparent 100%);
+  pointer-events: none;
+}
+
+#navbarImage {
+  background: url("/assets/carpet_crop_top.png");
+  background-repeat: repeat-x;
+  image-rendering: pixelated;
+  background-size: auto 100%;
+
+  animation: carpetFly 3000ms linear infinite forwards;
+  animation-play-state: paused;
+}
+
 #navTriangle {
   position: absolute;
   width: 0;
   height: 0;
 
-  top: calc(60% + 0.5em);
+  top: calc(60% + 0.2em);
   left: 50%;
   transform: translateX(-50%);
 
@@ -73,9 +96,10 @@ a {
 }
 #navIconDiv {
   position: absolute;
+  cursor: pointer;
   width: 20%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-40%);
   left: 10px;
 }
 #navIconDiv > img {
@@ -87,6 +111,7 @@ a {
   height: 100%;
 
   text-align: center;
+
 
   display: flex;
   align-items: center;
@@ -109,11 +134,11 @@ a {
   font-size: 1.8em;
   color: var(--secondary-color-light);
 }
-.navElement > a::before {
+/*.navElement > a::before {
   content: "";
   position: absolute;
-  inset: 20%;
-  border-radius: 20px;
+  inset: 25%;
+  border-radius: 1em;
   background-color: var(--accent-color-light);
   z-index: -1;
 
@@ -121,8 +146,8 @@ a {
   transition: opacity 400ms ease-out;
 }
 .navElement:hover > a::before {
-  opacity: 0.8;
-}
+  opacity: 0.6;
+}*/
 
 @media (max-width: 1200px) {
   .navElement a { font-size: 1em !important; }

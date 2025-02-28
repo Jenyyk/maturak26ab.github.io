@@ -42,9 +42,8 @@ async function insertNavbar(selectedPage) {
         .then(response => response.text())
         .then(data => {
             const navBarDoc = new DOMParser().parseFromString(data, 'text/html');
-            const navBar = navBarDoc.querySelector('nav');
-
-
+            const navBarContainer = navBarDoc.querySelector('div');
+            const navBar = navBarContainer.querySelector('nav');
 
             navBar.querySelectorAll('.navElement').forEach(navElem => {
                 const href = navElem.querySelector('a').href;
@@ -58,7 +57,7 @@ async function insertNavbar(selectedPage) {
                 }
             });
 
-            document.body.prepend(navBar);
+            document.body.prepend(navBarContainer);
         });
 }
 

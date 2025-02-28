@@ -34,6 +34,7 @@ document.querySelectorAll("img.preview").forEach((imageElement) => {
       left: "20px",
       zIndex: "6",
       cursor: "pointer",
+      borderRadius: "12px"
     });
     Object.assign(rightArrow.style, {
       borderLeft: "60px solid var(--accent-color-light)",
@@ -44,6 +45,7 @@ document.querySelectorAll("img.preview").forEach((imageElement) => {
       right: "20px",
       zIndex: "6",
       cursor: "pointer",
+      borderRadius: "12px"
     });
 
     leftArrow.addEventListener("click", () => updateImage(currentIndex - 1));

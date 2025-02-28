@@ -17,20 +17,28 @@ class CharQueue {
     if (this.queue.length < targetLength) return false;
     return this.queue.slice(-targetLength).join('') === target;
   }
+
+  clear() {
+    this.queue = [];
+  }
 }
 
 const keyQueue = new CharQueue(20);
 const binds = new Map();
+// Timeout to clear keyQueue, to not keep old data around
+let clearQueueTimeout = setTimeout(() => {}, 5);
 
 // Listen for key inputs and check them against queue
 document.addEventListener("keyup", (e) => {
+  clearTimeout(clearQueueTimeout);
   keyQueue.enqueue(e.key);
 
   for (const [key, value] of binds) {
     if (keyQueue.lastMatches(key)) {
-      binds.get(key)();
+      value();
     }
   }
+  clearQueueTimeout = setTimeout(() => { keyQueue.clear(); }, 1000);
 })
 
 const keyTrap = {

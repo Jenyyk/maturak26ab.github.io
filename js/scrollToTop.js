@@ -33,4 +33,4 @@ window.onscroll = () => {
   }
 }
 
-keyTrap.bind("ww", () => location.href = "./#topAnchor");
+keyTrap.bind("ww", () => location.href = window.location.pathname + "#topAnchor");

@@ -4,7 +4,7 @@
 
 .offset {
     display: block;
-    height: 2vh;
+    height: 0vh;
     width: 100%;
 }
 #sideImage {
@@ -135,5 +135,8 @@
     }
     .eventTime {
         font-size: 1.3em
+    }
+    .offset {
+        height: 2vh;
     }
 }

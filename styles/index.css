@@ -146,6 +146,7 @@
 }
 #bottomGalleryDiv img {
   width: 19%;
+  object-fit: cover;
   transition: all 600ms ease-out;
   border: 0.5vw solid transparent;
   border-radius: calc(0.5vw + 12px);
@@ -158,13 +159,11 @@
 #bottomGalleryDiv img:has(+ * + *:hover) {
   transform:
     scale(0.95)
-    rotate3d(0, -1, 0, 10deg)
     !important;
 }
 #bottomGalleryDiv img:has(+ *:hover) {
   transform:
     scale(1.05)
-    rotate3d(0, -1, 0, 20deg)
     !important;
 }
 #bottomGalleryDiv img:hover {
@@ -177,12 +176,10 @@
 #bottomGalleryDiv img:hover + * {
   transform:
     scale(1.05)
-    rotate3d(0, 1, 0, 20deg)
     !important;
 }
 #bottomGalleryDiv img:hover + * + * {
   transform:
     scale(0.95)
-    rotate3d(0, 1, 0, 10deg)
     !important;
 }

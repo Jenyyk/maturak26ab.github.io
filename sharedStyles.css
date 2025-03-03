@@ -34,6 +34,14 @@ a {
   color: unset;
   /* text-decoration: none; */
 }
+/* Text inside a span tag wont break across lines */
+span {
+  white-space:   nowrap;
+  -webkit-hyphens: none;
+  -moz-hyphens:    none;
+  -ms-hyphens:     none;
+  hyphens:         none;
+}
 
 
 

@@ -4,32 +4,33 @@ body{
 }
 
 #container {
-    margin: auto;
-    width: 52.5vw;
-    height: 28.875vw;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.4vw;
-    margin-top: 5vw;
-    margin-bottom: 5vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    gap: 8px;
 
+    width: 80vw;
+    margin: 70px auto;
 }
 
 .contactCard {
     border-radius: 0 0 0 15px;
     display: flex;
     background-color: rgba(255,255,255,0.4);
+    position: relative;
 
-    width: 26.25vw; /* 3/4 of 35vw */
-    height: 8.025vw; /* 3/4 of 10.7vw */
+    width: 550px;
     align-items: center;
+    margin: 20px 0;
 }
 
 .contactCard img {
     margin-left: 1.5%;
     margin-right: 3%;
-    width: 22%; /* 3/4 of 22% */
-    height: 90%; /* 3/4 of 90% */
+    width: 20%;
+    max-height: 90%;
     border-radius: 0 0 0 10px;
 }
 
@@ -38,37 +39,27 @@ body{
     flex-direction: column; /* Stack name and description vertically */
     justify-content: center;
     width: 70%; /* Takes up remaining space */
+    margin: 8px 0;
 }
 
 .contactName {
     align-self: flex-start;
     font-weight: bold;
-    font-size: 1.5vw; /* 3/4 of 2vw */
+    font-size: 2em;
     margin-bottom: 1%;
 }
 
 .contactDescription {
-    font-size: 1.125vw; /* 3/4 of 1.5vw */
+    font-size: 1.3em;
 }
 
 @media (max-aspect-ratio: 1/1) {
-    #container {
-        grid-template-columns: 1fr; /* Change to 1 column */
-        margin-left: 20vw;
-        margin-bottom: 110vw;
-    }
-    .contactCard {
-        width: 60vw; /* 3/4 of 48vw */
-        height: 19vw; /* 3/4 of 15vw */
-    }
     .contactName {
-        align-self: flex-start;
-        font-weight: bold;
-        font-size: 3vw; /* 3/4 of 2vw */
+        font-size: 1.4em; /* 3/4 of 2vw */
         margin-bottom: 2%;
     }
 
     .contactDescription {
-        font-size: 2.25vw; /* 3/4 of 1.5vw */
+        font-size: 1em; /* 3/4 of 1.5vw */
     }
 }

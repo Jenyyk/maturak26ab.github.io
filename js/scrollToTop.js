@@ -1,4 +1,4 @@
-import keyTrap from "./mousetrap.js";
+import keyTrap from "./keytrap.js";
 
 // Scroll button
 // Generic design, can change later @Dopple24

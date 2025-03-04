@@ -1,4 +1,4 @@
-import keyTrap from './mousetrap.js';
+import keyTrap from './keytrap.js';
 
 // Constants
 const camelSpeed = 100 / 1000;

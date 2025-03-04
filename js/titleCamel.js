@@ -1,4 +1,4 @@
-import keyTrap from "./mousetrap.js"
+import keyTrap from "./keytrap.js"
 
 keyTrap.bind("amalka", camelWalk);
 

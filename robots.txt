@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://maturak26ab.cz/sitemap.xml

@@ -27,9 +27,6 @@
 #showcaseImageDiv img:hover {
   transform: scale(1.05);
 }
-#showcaseImageDiv:has(img:hover) img:not(:hover) {
-  opacity: 0.6;
-}
 @media (max-width: 1200px) {
   #showcaseImageDiv { columns: 2; }
 }

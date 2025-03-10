@@ -27,6 +27,32 @@
 #showcaseImageDiv img:hover {
   transform: scale(1.05);
 }
+
+.a, .b { position: relative; }
+.a::before, .b::after {
+  position: absolute;
+  color: var(--accent-color-light);
+  font-size: 2em;
+  bottom: 14px;
+  backdrop-filter: blur(6px);
+
+  padding: 1px 4px;
+  background: #00000080;
+  border-radius: 12px;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+.a::before {
+  content: "8.A";
+  left: 0;
+}
+.b::after {
+  content: "8.B";
+  right: 0;
+}
+
 @media (max-width: 1200px) {
   #showcaseImageDiv { columns: 2; }
 }

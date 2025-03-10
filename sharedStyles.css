@@ -35,7 +35,7 @@ a {
   /* text-decoration: none; */
 }
 /* Text inside a span tag wont break across lines */
-span {
+span:not(.screamer) {
   white-space:   nowrap;
   -webkit-hyphens: none;
   -moz-hyphens:    none;

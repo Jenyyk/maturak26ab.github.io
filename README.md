@@ -22,3 +22,4 @@
 ### Hlavní přispěvovatelé:
 - [@Dopple24](https://github.com/Dopple24) - Design a obsah stránky
 - [@ZenithMeetsNadir](https://github.com/ZenithMeetsNadir) - Velká porce kódu a kobereček
+- [XdaZCZ](https://github.com/XdaZCZ) - targe

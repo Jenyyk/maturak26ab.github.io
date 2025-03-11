@@ -22,11 +22,11 @@
   width: 100%;
   margin-bottom: 10px;
   border-radius: 12px;
-  transition: all 500ms ease-out;
 }
-#showcaseImageDiv img:hover {
+div:not(#showcaseImageDiv):has(img:hover) {
   transform: scale(1.05);
 }
+div { transition: all 500ms ease-out; }
 
 .a, .b { position: relative; }
 .a::before, .b::after {

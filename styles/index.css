@@ -131,6 +131,15 @@
   font-size: 2.2em;
   font-weight: bold;
 }
+iframe {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 0 20px 0;
+
+  border-radius: 12px;
+  max-width: 90vw;
+}
 @media (max-width: 1200px) {
   #mainContentDiv { width: 90%; }
   .mainElement {
@@ -141,6 +150,10 @@
     height: unset;
   }
   .mainElement img { height: 3em; position: absolute; right: 10px; }
+  .contentText { width: calc(100% - 3em); }
+  .contentText h2 { font-size: 2em; }
+  .contentText p { font-size: 1em; }
+  .contentText span { font-size: 1.6em; }
 }
 
 /* TRAILER DIV BACKGROUND */

@@ -3,3 +3,4 @@ import "./camel.js";
 import "./scrollToTop.js";
 import "./titleCamel.js";
 import "./darkMode.js";
+import "./cookie.js";

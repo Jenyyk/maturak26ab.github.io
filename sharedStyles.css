@@ -1,10 +1,9 @@
 /* BASE VALUES and DEFAULT STYLES */
 :root {
-  /* LIGHT MODE */
-  --main-color-light: #fffcf1;
-  --secondary-color-light: #e9f5fe;
-  --accent-color-light: #f3b700;
-  --contrast-color-light: #0f1e3d;
+  --main-color: #fffcf1;
+  --secondary-color: #e9f5fe;
+  --accent-color: #f3b700;
+  --contrast-color: #0f1e3d;
 
   --horizon-sky-light: rgba(255, 218, 153, 0.6);
   --horizon-sky-subdued: rgba(205, 175, 127, 0.5);
@@ -20,14 +19,14 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background-color: var(--main-color-light);
+  background-color: var(--main-color);
 
   margin: 0;
 
   overflow-x: hidden;
 }
 * {
-  color: var(--contrast-color-light);
+  color: var(--contrast-color);
   font-family: Roboto;
 }
 a {
@@ -63,7 +62,7 @@ span:not(.screamer) {
   box-shadow: inset 0 0 30px 20px #00000040,
       0 0 20px 10px #000000;
 
-  border-bottom: 2px solid var(--accent-color-light);
+  border-bottom: 2px solid var(--accent-color);
   border-radius: 0 0 12px 12px;
 }
 
@@ -78,7 +77,7 @@ span:not(.screamer) {
 
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 12px solid var(--accent-color-light);
+  border-bottom: 12px solid var(--accent-color);
 }
 #navIconDiv {
   position: absolute;
@@ -111,19 +110,19 @@ span:not(.screamer) {
 
   left: -1.5px;
   width: 3px;
-  background-color: var(--accent-color-light);
+  background-color: var(--accent-color);
 }
 
 .navElement a {
   font-size: 1.8em;
-  color: var(--secondary-color-light);
+  color: var(--secondary-color);
 }
 .navElement > a::before {
   content: "";
   position: absolute;
   inset: 20%;
   border-radius: 20px;
-  background-color: var(--accent-color-light);
+  background-color: var(--accent-color);
   z-index: -1;
 
   opacity: 0;
@@ -168,7 +167,7 @@ span:not(.screamer) {
 div.breakLine {
   position: relative;
   width: 100%;
-  border-top: 2px solid var(--accent-color-light);
+  border-top: 2px solid var(--accent-color);
 }
 
 /* STYLES FOR POPUP IMAGES USING js/imagePreview.js */
@@ -204,7 +203,7 @@ div.breakLine {
 
 hr {
   border: none;
-  border-top: 2px solid var(--accent-color-light);
+  border-top: 2px solid var(--accent-color);
   margin: 0.5rem 0;
 }
 

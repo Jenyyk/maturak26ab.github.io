@@ -31,7 +31,7 @@ div { transition: all 500ms ease-out; }
 .a, .b { position: relative; }
 .a::before, .b::after {
   position: absolute;
-  color: var(--accent-color-light);
+  color: var(--accent-color);
   font-size: 2em;
   bottom: 14px;
   backdrop-filter: blur(6px);

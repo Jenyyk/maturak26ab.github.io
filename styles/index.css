@@ -22,7 +22,7 @@
   flex-direction: column;
   align-items: center;
 
-  border: 1px solid var(--accent-color-light);
+  border: 1px solid var(--accent-color);
   border-radius: 12px;
   background: linear-gradient(140deg, #00000020 55%, #ffffff40 85%);
   backdrop-filter: blur(14px);
@@ -41,7 +41,7 @@
   text-align: center;
   font-size: 3.2em;
 
-  color: var(--main-color-light);
+  color: var(--main-color);
 
   margin-bottom: 2px;
   margin-top: 50px;
@@ -50,7 +50,7 @@
   text-align: center;
   font-size: 1.5em;
 
-  color: var(--main-color-light);
+  color: var(--main-color);
 
   margin-top: 2px;
   margin-bottom: 50px;
@@ -61,7 +61,7 @@
   margin-top: 5px;
   margin-bottom: 35px;
 
-  border: 2px solid var(--accent-color-light);
+  border: 2px solid var(--accent-color);
   border-radius: 12px;
   background-color: #00000050;
 
@@ -75,11 +75,11 @@
 }
 #buyTicketDiv > h2 {
   font-size: 1.8em;
-  color: var(--main-color-light);
+  color: var(--main-color);
 }
 #buyTicketDiv > p {
   font-size: 1.2em;
-  color: var(--main-color-light);
+  color: var(--main-color);
 }
 @media (max-width: 1200px) {
   #buyTicketDiv { margin: 0 0 10px 0 !important; width: 80% !important; }
@@ -105,7 +105,7 @@
 
   /* box-sizing: border-box;
   padding: 10px;
-  border: 2px solid var(--accent-color-light);
+  border: 2px solid var(--accent-color);
   border-radius: 12px;
   background: linear-gradient(110deg, #00000030 20%, #00000060); */
 }
@@ -177,7 +177,7 @@ iframe {
   flex-direction: column;
   align-items: center;
 
-  border: 1px solid var(--accent-color-light);
+  border: 1px solid var(--accent-color);
   border-radius: 12px;
 
   margin: 30px 18%;

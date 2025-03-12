@@ -29,13 +29,13 @@
     margin-bottom: 20px;
     padding: 15px;
 
-    background: var(--secondary-color-light);
-    border-left: 6px solid var(--accent-color-light);
+    background: var(--secondary-color);
+    border-left: 6px solid var(--accent-color);
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 
     font-size: 1.2em;
-    color: var(--contrast-color-light);
+    color: var(--contrast-color);
     transition: transform 200ms ease-out;
 }
 
@@ -46,7 +46,7 @@
 .eventTime {
     font-weight: bold;
     font-size: 1.5em;
-    color: var(--accent-color-light);
+    color: var(--accent-color);
     min-width: 80px;
     text-align: center;
 }

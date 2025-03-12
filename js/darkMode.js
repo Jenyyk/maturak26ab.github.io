@@ -32,15 +32,15 @@ const buttonDiv = document.createElement("div");
 const buttonImage = document.createElement("img");
 buttonImage.setAttribute("id", "darkModeImage");
 // Assigns src based on dark-light mode
-buttonImage.setAttribute("src", `/assets/${localStorage.getItem("darkMode") == "true"}.svg`);
+buttonImage.setAttribute("src", `/assets/darkMode${localStorage.getItem("darkMode") == "true"}.svg`);
 // Styles the image container
 Object.assign(buttonDiv.style, {
   position: "fixed",
   bottom: "8px",
   left: "8px",
   borderRadius: "50%",
-  height: "80px",
-  width: "80px",
+  height: "clamp(0px, 10vw, 80px)",
+  width: "clamp(0px, 10vw, 80px)",
   backgroundColor: "var(--secondary-color)",
   overflow: "hidden",
   border: "2px solid var(--accent-color)",
@@ -75,7 +75,7 @@ function switchButton() {
   });
   // Change the image in the middle of the animation
   setTimeout(() => {
-    buttonImage.setAttribute("src", `/assets/${localStorage.getItem("darkMode") == "true"}.svg`);
+    buttonImage.setAttribute("src", `/assets/darkMode${localStorage.getItem("darkMode") == "true"}.svg`);
   }, 400);
 }
 

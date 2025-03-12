@@ -41,7 +41,7 @@
   text-align: center;
   font-size: 3.2em;
 
-  color: var(--main-color);
+  color: var(--main-color-firm);
 
   margin-bottom: 2px;
   margin-top: 50px;
@@ -50,7 +50,7 @@
   text-align: center;
   font-size: 1.5em;
 
-  color: var(--main-color);
+  color: var(--main-color-firm);
 
   margin-top: 2px;
   margin-bottom: 50px;
@@ -66,7 +66,6 @@
   background-color: #00000050;
 
   text-align: center;
-  color: white;
 
   transition: transform 500ms ease-out;
 }
@@ -75,11 +74,11 @@
 }
 #buyTicketDiv > h2 {
   font-size: 1.8em;
-  color: var(--main-color);
+  color: var(--main-color-firm);
 }
 #buyTicketDiv > p {
   font-size: 1.2em;
-  color: var(--main-color);
+  color: var(--main-color-firm);
 }
 @media (max-width: 1200px) {
   #buyTicketDiv { margin: 0 0 10px 0 !important; width: 80% !important; }

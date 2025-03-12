@@ -37,7 +37,7 @@ div { transition: all 500ms ease-out; }
   backdrop-filter: blur(6px);
 
   padding: 1px 4px;
-  background: #00000080;
+  background: color-mix(in srgb, var(--contrast-color) 60%, transparent);
   border-radius: 12px;
 
   z-index: 1;

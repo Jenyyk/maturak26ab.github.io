@@ -9,6 +9,10 @@
 }
 #sideImage {
     background-image: url("../assets/map.svg");
+    background-repeat: no-repeat;
+    background-color: color-mix(in srgb, var(--main-color-firm) 80%, transparent);
+    border: 40px solid transparent;
+    border-radius: 12px;
     height: 1055px;
     width: 223px;
     display: flex;
@@ -17,6 +21,7 @@
     background-size: cover;
     margin-top: 10px;
     margin-left: 75vw;
+    z-index: -1;
 }
 
 .eventCard {
@@ -32,7 +37,7 @@
     background: var(--secondary-color);
     border-left: 6px solid var(--accent-color);
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 15px var(--contrast-color);
 
     font-size: 1.2em;
     color: var(--contrast-color);
@@ -64,7 +69,7 @@
 
 .eventDescription {
     font-size: 1em;
-    color: #333;
+    color: var(--contrast-color);
     opacity: 0.8;
 }
 
@@ -84,16 +89,14 @@
 
     width: 60vw;
     height: 10vh;
-    background-color: #D3D3D3;
-    background-color: rgba(211,211,211,0.7);
-    border-radius: 10px;
-    color: #D3D3D3;
+    background-color: var(--secondary-color);
+    border-radius: 12px;
     background: linear-gradient(140deg, #00000020 55%, #ffffff40 85%);
     backdrop-filter: blur(14px);
 }
 
 #title {
-    color: #FFFFFF;
+    color: var(--secondary-color-firm);
     font-size: 3em;
     font-weight: 900;
 }

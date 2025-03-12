@@ -4,6 +4,12 @@
   --secondary-color: #e9f5fe;
   --accent-color: #f3b700;
   --contrast-color: #0f1e3d;
+/* COPY FOR ELEMENTS THAT DO NOT CHANGE WITH DARK MODE  *
+ * UNFORTUNATELY HAS TO BE HERE                         */
+  --main-color-firm: #fffcf1;
+  --secondary-color-firm: #e9f5fe;
+  --accent-color-firm: #f3b700;
+  --contrast-color-firm: #0f1e3d;
 
   --horizon-sky-light: rgba(255, 218, 153, 0.6);
   --horizon-sky-subdued: rgba(205, 175, 127, 0.5);
@@ -115,7 +121,7 @@ span:not(.screamer) {
 
 .navElement a {
   font-size: 1.8em;
-  color: var(--secondary-color);
+  color: var(--secondary-color-firm);
 }
 .navElement > a::before {
   content: "";
@@ -155,8 +161,9 @@ span:not(.screamer) {
   background-color: #F9C561;
   padding: 40px 120px;
 }
-#footer > div > p {
+#footer > div {
   margin: 0;
+  color: var(--contrast-color-firm) !important;
 }
 @media (max-width: 1200px) {
   #footer > div { padding: 40px 20px !important; }

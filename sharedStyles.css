@@ -1,6 +1,10 @@
 /* BASE VALUES and DEFAULT STYLES */
 :root {
-  --main-color: #fffcf1;
+/* MAIN COLOR IS INITIALIZED AS DARK,                                         *
+ * THE REGULAR VALUE IS #fffcf1                                               *
+ * THIS IS BECAUSE AT NIGHT, THIS COLOR WILL FLASH BEFORE DARK MODE KICKS IN  *
+ * INITIALIZING AS DARK PREVENTS THE USER FROM BEING BLINDED AT NIGHT         */
+  --main-color: #242424;
   --secondary-color: #e9f5fe;
   --accent-color: #f3b700;
   --contrast-color: #0f1e3d;
@@ -30,6 +34,8 @@ body {
   margin: 0;
 
   overflow-x: hidden;
+
+  transition: none;
 }
 * {
   color: var(--contrast-color);

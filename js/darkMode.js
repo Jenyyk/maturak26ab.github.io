@@ -14,10 +14,70 @@ const contrastDark = "#ffffff";
 if (localStorage.getItem("darkMode") === null) {
   localStorage.setItem("darkMode", false);
 }
+// Initialize dark mode
 updateColorScheme();
 
+// Body will transition between colors
+// Must be put here to prevent random transitions on startup
+setTimeout(() => document.body.style.transition = "background-color 800ms ease-in-out", 200);
+
 // Bind darkmode to a shortcut
-keyTrap.bind("nm", () => changeModes());
+keyTrap.bind("nm", () => {
+  changeModes();
+  switchButton();
+});
+
+// Add darkmode button
+const buttonDiv = document.createElement("div");
+const buttonImage = document.createElement("img");
+buttonImage.setAttribute("id", "darkModeImage");
+// Assigns src based on dark-light mode
+buttonImage.setAttribute("src", `/assets/${localStorage.getItem("darkMode") == "true"}.svg`);
+// Styles the image container
+Object.assign(buttonDiv.style, {
+  position: "fixed",
+  bottom: "8px",
+  left: "8px",
+  borderRadius: "50%",
+  height: "80px",
+  width: "80px",
+  backgroundColor: "var(--secondary-color)",
+  overflow: "hidden",
+  border: "2px solid var(--accent-color)",
+  transition: "all 800ms ease-in-out",
+  zIndex: "1"
+});
+// Styles the image
+Object.assign(buttonImage.style, {
+  width: "80%",
+  height: "80%",
+  position: "absolute",
+  left: "10%",
+  top: "10%"
+});
+buttonDiv.appendChild(buttonImage);
+document.body.appendChild(buttonDiv);
+buttonDiv.addEventListener("click", () => {
+  changeModes();
+  switchButton();
+})
+// Extra function needed to animate the switching of the button
+function switchButton() {
+  let buttonImage = document.getElementById("darkModeImage");
+  buttonImage.animate([
+    { transform: "rotate(0deg)" },
+    { filter: "blur(8px)"},
+    { transform: "rotate(360deg)" }
+  ], {
+    duration: 800,
+    iteration: 1,
+    easing: "ease-in-out"
+  });
+  // Change the image in the middle of the animation
+  setTimeout(() => {
+    buttonImage.setAttribute("src", `/assets/${localStorage.getItem("darkMode") == "true"}.svg`);
+  }, 400);
+}
 
 // Update CSS root values to let CSS handle our hard work
 function updateColorScheme() {

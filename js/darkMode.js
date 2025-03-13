@@ -45,7 +45,8 @@ Object.assign(buttonDiv.style, {
   overflow: "hidden",
   border: "2px solid var(--accent-color)",
   transition: "all 800ms ease-in-out",
-  zIndex: "1"
+  zIndex: "1",
+  cursor: "pointer"
 });
 // Styles the image
 Object.assign(buttonImage.style, {

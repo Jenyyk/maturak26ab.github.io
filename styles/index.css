@@ -16,6 +16,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  animation: upDown 30s infinite alternate ease-in-out;
+}
+@keyframes upDown {
+  from { object-position: top left;    }
+  to   { object-position: bottom right; }
 }
 #mainTextParent {
   display: flex;
@@ -110,6 +115,9 @@
 }
 .mainElement img {
   height: 98%;
+  background-color: color-mix(in srgb, var(--main-color-firm) 60%, transparent);
+  border: 20px solid transparent;
+  border-radius: 12px;
 }
 .contentText {
   display: flex;

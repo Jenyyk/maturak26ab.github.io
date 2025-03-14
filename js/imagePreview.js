@@ -26,7 +26,7 @@ document.querySelectorAll("img.preview").forEach((imageElement) => {
     const rightArrow = document.createElement("div");
 
     Object.assign(leftArrow.style, {
-      borderRight: "60px solid var(--accent-color-light)",
+      borderRight: "60px solid var(--accent-color)",
       borderTop: "40px solid transparent",
       borderBottom: "40px solid transparent",
       position: "fixed",
@@ -37,7 +37,7 @@ document.querySelectorAll("img.preview").forEach((imageElement) => {
       borderRadius: "12px"
     });
     Object.assign(rightArrow.style, {
-      borderLeft: "60px solid var(--accent-color-light)",
+      borderLeft: "60px solid var(--accent-color)",
       borderTop: "40px solid transparent",
       borderBottom: "40px solid transparent",
       position: "fixed",

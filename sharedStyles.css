@@ -175,6 +175,11 @@ span:not(.screamer) {
   #footer > div { padding: 40px 20px !important; }
 }
 
+/* NICE IMAGE EFFECT */
+@keyframes objectUpDown {
+  from { object-position: top left;    }
+  to   { object-position: bottom right; }
+}
 
 /* SUBSTITURE FOR <hr> WITH ACCENT COLOR */
 div.breakLine {

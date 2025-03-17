@@ -64,6 +64,7 @@ p {
 .sponsorImage {
     float: left;
     margin: 0 2em 2em 0;
+    width: 20%;
 }
 
 /* uprimne sam nevim jak to funguje, ale ten obtékaný obrázek zůstane ve svém divu*/
@@ -78,6 +79,7 @@ p {
         float: none;
         display: block;
         margin: 0 auto 2em auto;
+        width: 60%;
     }
 
     .clearfix::after {
@@ -91,18 +93,46 @@ p {
 }
 
 #otherSponsorsGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 0.5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
+/* JENÍKOVO */
+.otherSponsor {
+  position: relative;
+  width: 40%;
+  padding: 10px 0;
+  min-height: 160px;
+  margin: 20px 0;
 
-.minorSponsor {
-    text-align: center;
-    margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+
+  border: 2px solid var(--accent-color);
+  border-radius: 12px;
+  background-color: color-mix(in srgb, var(--secondary-color) 40%, transparent);
 }
+.otherSponsor > * {
+  margin: 0 20px;
+}
+.otherSponsor > img {
+  max-height: 90%;
+  max-width: 30%;
+  border-radius: 3px;
+}
+.otherSponsor > div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.otherSponsor > div > * { margin: 0; }
 
-@media (max-width: 750px) {
-    #otherSponsorsGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+@media (max-width: 1200px) {
+  .otherSponsor {
+    width: 100%;
+    flex-direction: column;
+  }
+  .otherSponsor > img { width: 35%; }
 }

@@ -14,6 +14,34 @@
   #mainAboutDiv p { font-size: 1.1em !important;}
 }
 
+#presentationDiv {
+  position: relative;
+  width: 90%;
+  aspect-ratio: 16/9;
+  left: 5%;
+  margin: 30px;
+
+  border: 2px solid var(--accent-color);
+  border-radius: 12px;
+
+  padding: 10px;
+  background: #242424;
+}
+#presentationDiv > img {
+  position: relative;
+  max-width: 100%
+}
+.arrow {
+  position: absolute;
+  bottom: 8px;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  z-index: 1;
+  cursor: pointer;
+}
+.left { border-right: 40px solid var(--accent-color); left: 8px; }
+.right { border-left: 40px solid var(--accent-color); right: 8px; }
+
 #showcaseImageDiv {
   columns: 400px;
   margin: 100px 20px;
@@ -23,7 +51,8 @@
   margin-bottom: 10px;
   border-radius: 12px;
 }
-div:not(#showcaseImageDiv):has(img:hover) {
+.a:has(img:hover),
+.b:has(img:hover) {
   transform: scale(1.05);
 }
 div { transition: all 500ms ease-out; }

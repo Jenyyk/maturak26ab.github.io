@@ -61,24 +61,36 @@ body{
 .contactDescription {
     font-size: 1.3em;
 }
+.contactDescription p {
+  margin: 0;
+}
+#tele::before { content: "☎️ "; font-weight: bold; transition: all 400ms linear; }
+#mail::before { content: "✉️ "; font-weight: bold; transition: all 400ms linear; }
 
 @media (max-aspect-ratio: 1/1) {
+  .contactCard > img {
+    margin-right: 0;
+    max-width: 30vw;
+    max-height: clamp(0px, 100%, 30vw);
+  }
+  #container {
+    width: 90vw;
+    margin: 12px auto;
+  }
   .contactCard {
     width: 100%;
-  }
-  .contactCard > img {
-    max-height: 60%;
-    margin-right: 0;
-  }
-  .contactCard * {
-    word-break: break-all;
+    height: unset;
+    max-height: 16vh;
   }
   .contactName {
-    font-size: 1.3em;
+    padding-top: 5px;
+    font-size: clamp(0px, 1.6em, 7vw);
     margin-bottom: 2%;
   }
-
   .contactDescription {
-    font-size: 0.9em;
+    font-size: clamp(0px, 1.3em, 4vw);
+    padding-bottom: 5px;
   }
+  #tele::before { position: absolute; right: 2px; }
+  #mail::before { position: absolute; right: 2px; }
 }

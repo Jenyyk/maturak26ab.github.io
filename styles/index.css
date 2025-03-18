@@ -210,6 +210,7 @@ iframe {
   transition: all 600ms ease-out;
   border: 0.5vw solid transparent;
   border-radius: calc(0.5vw + 12px);
+  animation: objectUpDown 30s ease-in-out infinite alternate;
 }
 /* BRUTE FORCING NICE HOVER EFFECT  */
 #bottomGalleryDiv:has(img:hover) img:not(:hover) {

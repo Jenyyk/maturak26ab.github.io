@@ -18,8 +18,7 @@
   position: relative;
   width: 90%;
   aspect-ratio: 16/9;
-  left: 5%;
-  margin: 30px;
+  margin: 30px auto;
 
   border: 2px solid var(--accent-color);
   border-radius: 12px;
@@ -29,7 +28,7 @@
 }
 #presentationDiv > img {
   position: relative;
-  max-width: 100%
+  max-width: 100%;
 }
 .arrow {
   position: absolute;
@@ -41,6 +40,16 @@
 }
 .left { border-right: 40px solid var(--accent-color); left: 8px; }
 .right { border-left: 40px solid var(--accent-color); right: 8px; }
+@media (max-width: 1200px) {
+  #presentationDiv {
+    width: 100%;
+    left: 0;
+    box-sizing: border-box;
+  }
+  .left, .right { border-top: 10px solid transparent; border-bottom: 10px solid transparent; }
+  .left { border-right: 15px solid var(--accent-color); }
+  .right { border-left: 15px solid var(--accent-color); }
+}
 
 #showcaseImageDiv {
   columns: 400px;
@@ -55,7 +64,7 @@
 .b:has(img:hover) {
   transform: scale(1.05);
 }
-div { transition: all 500ms ease-out; }
+.a, .b { transition: all 500ms ease-out; }
 
 .a, .b { position: relative; }
 .a::before, .b::after {

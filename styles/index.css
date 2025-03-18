@@ -112,7 +112,7 @@
 .mainElement img {
   height: 98%;
   background-color: color-mix(in srgb, var(--main-color-firm) 60%, transparent);
-  border: 20px solid transparent;
+  border: 12px solid transparent;
   border-radius: 12px;
 }
 .contentText {
@@ -152,8 +152,8 @@ iframe {
     gap: 0;
     height: unset;
   }
-  .mainElement img { height: 3em; position: absolute; right: 10px; }
-  .contentText { width: calc(100% - 3em); }
+  .mainElement img { height: 3em; position: absolute; right: -10px; }
+  .contentText { width: calc(100% - 3em - 16px); }
   .contentText h2 { font-size: 2em; }
   .contentText p { font-size: 1em; }
   .contentText span { font-size: 1.6em; }

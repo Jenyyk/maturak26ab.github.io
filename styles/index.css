@@ -191,7 +191,7 @@ iframe {
 #trailerDiv > h2 {
   font-size: 2em;
 }
-#trailerDiv > video {
+#trailerDiv > video, #trailerDiv > img {
   width: 85%;
   border-radius: 12px;
 }

@@ -1,0 +1,78 @@
+:root {
+  --blur-amount: 25px;
+}
+
+#siteParent {
+  display: flex;
+  flex-direction: row;
+  min-height: 80vh;
+}
+#siteParent div {
+  position: relative;
+  margin: 0;
+  padding: 30px;
+  box-sizing: border-box;
+}
+#leftSide {
+  width: 35%;
+}
+.censor * {
+  filter: blur(var(--blur-amount));
+  transition: filter 200ms ease-out;
+}
+.censor::after {
+  content:"odhalí se po odsouhlasení";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: var(--blur-amount);
+  padding: calc(var(--blur-amount) - 15px);
+  background-color: var(--secondary-color);
+  box-sizing: border-box;
+  border-radius: 12px;
+  transition: all 200ms ease-out;
+}
+
+#qrImage {
+  border: 2px solid var(--accent-color);
+  border-radius: 12px;
+  width: 70%;
+  image-rendering: pixelated;
+  margin: 0 15%;
+}
+
+
+#rightSide {
+  position: relative;
+  width: 65%;
+}
+#acceptCheckbox {
+  height: 1.6em;
+  width: 1.6em;
+  margin: 0 10px 0 0;
+}
+#rightSide::before {
+  content:"";
+  position: absolute;
+  height: 90%;
+  width: 4px;
+  top: 5%;
+  left: 0;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+#rightSide h1 { font-size: 3em;   }
+#rightSide p  { font-size: 1.6em; }
+
+@media (max-width: 1200px) {
+  #siteParent {
+    flex-direction: column-reverse;
+  }
+  #siteParent div { padding: 10px; }
+  #rightSide { width: 100%; }
+  #rightSide::before { display: none; }
+  #leftSide  { width: 100%; }
+  #qrImage { width: 90%; margin: 0 5%; }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <title>Noc v Orientu - 2026</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/favicon.png">
+    <!-- Every page has a shared and individual stylesheet! -->
+    <link rel="stylesheet" href="/sharedStyles.css">
+    <link rel="stylesheet" href="/styles/buyticket.css">
+  </head>
+  <body>
+    <script src="/js/sharedHtml.js" type="module"></script>
+    <div id="siteParent">
+      <div id="leftSide">
+        <h2>QR kód pro platbu</h2>
+        <div class="censor">
+          <img id="qrImage" alt="QR Code will appear here">
+        </div>
+      </div>
+      <div id="rightSide">
+        <h1>DŮLEŽITÉ INFORMACE PŘED NÁKUPEM</h1>
+        <p>Do zprávy pro příjemce zadejte svůj e-mail a <strong>nic jiného</strong>.
+           Na tento e-mail Vám po obdržení peněz přijde potvrzení a vaše lístky ve formě QR kódu.<br>
+           Peníze nemusí přijít hned. Potvrzovací e-mail bude odeslán jakmile je obdržíme.</br>
+           Pokud chcete koupit více lístků, stačí poslat více peněz, tj. 400,- Kč za každý lístek.<br>
+           <br>
+           Pokud jste již jednou peníze poslali, a potřebujete dokoupit další lístky, doporučujeme počkat alespoň jeden den a naskenovat znovu QR kód. <strong style="color:#ff5050;">Za žádných okolností nepoužívejte funkci "poslat platbu znovu"</strong>.<span style="font-size:0.7em; text-decoration:underline" title="Pokud bude každý detail transakce stejný, náš systém nemusí rozpoznat novou transakci. Pokud však počkáte jeden den a naskenujete nový QR kód, změní se datum a variabilní symbol, což nám umožní vás dostatečně rozeznat.">proč?</span><br>
+           <br>
+           Na druhé straně transakcí je robot. Všechny lístky kontrolujeme, ale se špatným zadáním vašich údajů, nebo nedodržením těchto pravidel nic nenaděláme.<br>
+           Pokud lístky nedorazí do týdne, neváhejte <a href="./contacts.html">nám napsat zde</a>.</p>
+        <p><input id="acceptCheckbox" type="checkbox">Přečetl/a jsem a souhlasím</p>
+      </div>
+    </div>
+    <script>
+      const checkbox = document.getElementById("acceptCheckbox");
+      document.documentElement.style.setProperty("--blur-amount", (checkbox.checked) ? "0px" : "25px");
+      checkbox.addEventListener("input", () => {
+        document.documentElement.style.setProperty("--blur-amount", (checkbox.checked) ? "0px" : "25px");
+      });
+    </script>
+    <script type="module">
+      import init, { get_qr } from "/js/qrpkg/wasm_qr.js";
+      runWasm();
+
+      async function runWasm() {
+        await init();
+
+        // upsík jeníkovy bankvní údaje??
+        const bank_qr =
+          "SPD*1.0*" +
+          "ACC:" + "CZ63" + "6210" + "670100" + "2222086531" +
+          "*AM:400" +
+          "*CC:CZK" +
+          "*MSG:prosím zadejte svůj e-mail" +
+          `*X-VS:${Math.floor(Math.random() * 50000)}` +
+          "*"
+
+        const placeholder = "online lístky zatim neprodáváme :)"
+
+        const qrDataUrl = get_qr(placeholder);
+        document.getElementById("qrImage").src = qrDataUrl;
+      }
+    </script>
+    <script src="/js/sharedJs.js" type="module"></script>
+  </body>
+</html>

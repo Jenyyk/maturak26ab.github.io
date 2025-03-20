@@ -7,7 +7,7 @@
   flex-direction: row;
   min-height: 80vh;
 }
-#siteParent div {
+#siteParent > div {
   position: relative;
   margin: 0;
   padding: 30px;
@@ -32,6 +32,23 @@
   box-sizing: border-box;
   border-radius: 12px;
   transition: all 200ms ease-out;
+}
+#inputs {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0;
+}
+#inputRange {
+  height: 1.6em;
+  font-size: 1.6em;
+  width: 60%;
+  margin: 0 30px 0 12px;
+}
+#inputNumber {
+  height: 1.6em;
+  font-size: 1.2em;
+  width: 20%;
 }
 
 #qrImage {
@@ -64,7 +81,7 @@
 }
 
 #rightSide h1 { font-size: 3em;   }
-#rightSide p  { font-size: 1.6em; }
+#rightSide p, span  { font-size: 1.6em; }
 
 @media (max-width: 1200px) {
   #siteParent {
@@ -72,7 +89,12 @@
   }
   #siteParent div { padding: 10px; }
   #rightSide { width: 100%; }
-  #rightSide::before { display: none; }
+  #rightSide::before {
+    width: 90%;
+    height: 4px;
+    left: 5%;
+    top: 100%;
+  }
   #leftSide  { width: 100%; }
   #qrImage { width: 90%; margin: 0 5%; }
 }

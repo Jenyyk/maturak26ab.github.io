@@ -13,7 +13,12 @@
     <script src="/js/sharedHtml.js" type="module"></script>
     <div id="siteParent">
       <div id="leftSide">
-        <h2>QR kód pro platbu</h2>
+        <h1>QR kód pro platbu</h1>
+        <p style="margin: 0 28px; font-size: 1.4em;">Počet lístků:</p>
+        <div id="inputs">
+          <input type="range" id="inputRange" min="1" max="10" value="1" step="1">
+          <input type="number" id="inputNumber" value="1">
+        </div>
         <div class="censor">
           <img id="qrImage" alt="QR Code will appear here">
         </div>
@@ -29,39 +34,10 @@
            <br>
            Na druhé straně transakcí je robot. Všechny lístky kontrolujeme, ale se špatným zadáním vašich údajů, nebo nedodržením těchto pravidel nic nenaděláme.<br>
            Pokud lístky nedorazí do týdne, neváhejte <a href="./contacts.html">nám napsat zde</a>.</p>
-        <p><input id="acceptCheckbox" type="checkbox">Přečetl/a jsem a souhlasím</p>
+        <input id="acceptCheckbox" type="checkbox" style="cursor: pointer;"><span id="checkboxText" style="cursor: pointer;">Přečetl/a jsem a souhlasím</span>
       </div>
     </div>
-    <script>
-      const checkbox = document.getElementById("acceptCheckbox");
-      document.documentElement.style.setProperty("--blur-amount", (checkbox.checked) ? "0px" : "25px");
-      checkbox.addEventListener("input", () => {
-        document.documentElement.style.setProperty("--blur-amount", (checkbox.checked) ? "0px" : "25px");
-      });
-    </script>
-    <script type="module">
-      import init, { get_qr } from "/js/qrpkg/wasm_qr.js";
-      runWasm();
-
-      async function runWasm() {
-        await init();
-
-        // upsík jeníkovy bankvní údaje??
-        const bank_qr =
-          "SPD*1.0*" +
-          "ACC:" + "CZ63" + "6210" + "670100" + "2222086531" +
-          "*AM:400" +
-          "*CC:CZK" +
-          "*MSG:prosím zadejte svůj e-mail" +
-          `*X-VS:${Math.floor(Math.random() * 50000)}` +
-          "*"
-
-        const placeholder = "online lístky zatim neprodáváme :)"
-
-        const qrDataUrl = get_qr(placeholder);
-        document.getElementById("qrImage").src = qrDataUrl;
-      }
-    </script>
+    <script src="/js/buyticket.js" type="module"></script>
     <script src="/js/sharedJs.js" type="module"></script>
   </body>
 </html>

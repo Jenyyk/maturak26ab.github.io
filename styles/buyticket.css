@@ -16,6 +16,7 @@
 #leftSide {
   width: 35%;
 }
+.censor { position: relative; }
 .censor * {
   filter: blur(var(--blur-amount));
   transition: filter 200ms ease-out;

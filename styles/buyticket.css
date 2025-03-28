@@ -84,6 +84,24 @@
 #rightSide h1 { font-size: 3em;   }
 #rightSide p, span  { font-size: 1.6em; }
 
+#eMailText {
+  position: relative;
+}
+#eMailText::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: -10px;
+  width: calc(100% + 40px);
+  height: calc(100% + 20px);
+  border-radius: 12px;
+  z-index: -1;
+  transition: all 600ms ease-in-out;
+}
+#rightSide:has(#eMailUseText:hover) #eMailText::before {
+  background-color: color-mix(in srgb, var(--accent-color) 80%, transparent);
+}
+
 @media (max-width: 1200px) {
   #siteParent {
     flex-direction: column-reverse;

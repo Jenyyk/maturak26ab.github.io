@@ -27,11 +27,22 @@ const input = document.getElementById("songInput");
 const songAddButton = document.getElementById("songAddButton");
 const spotifyUrlPattern = /^(https?:\/\/)?(open\.)?spotify\.com\/(track)\/[a-zA-Z0-9]+/;
 const isValidUrl = url => spotifyUrlPattern.test(url);
-songAddButton.addEventListener("click", () => {
+songAddButton.addEventListener("click", async () => {
   if (!isValidUrl(input.value)) {
     input.value = "invalidní url";
+    return;
   }
-  addSong(input.value);
+  const res = await addSong(input.value);
+  if (res === 409) {
+    input.value = "písnička už existuje";
+    return;
+  }
+  input.value = "písnička přidána";
+  updateList();
+})
+const passInput = document.getElementById("adminPasswordInput");
+passInput.addEventListener("change", () => {
+  savedPassword = passInput.value;
   updateList();
 })
 
@@ -66,7 +77,7 @@ async function updateList() {
     songTitle.setAttribute("target", "_blank");
     songDelete.innerHTML = "X";
     songDelete.addEventListener("click", () => {
-      deleteSong(song.id);
+      deleteSong(song.uuid);
     })
 
     songRight.appendChild(songImage);

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+  <head>
+    <title>Noc v Orientu - 2026</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/favicon.png">
+    <!-- Every page has a shared and individual stylesheet! -->
+    <link rel="stylesheet" href="/sharedStyles.css">
+    <link rel="stylesheet" href="/styles/live.css">
+  </head>
+  <body>
+    <script src="/js/sharedHtml.js" type="module"></script>
+    <div id="countdownParent">
+      <p id="countdownTimer">přemejšlim...</p>
+    </div>
+    <div id="musicQueueParent">
+      <div id="musicQueueTop">
+        <p>Písničky na přání:</p>
+        <div>
+          <input id="songInput" type="text" placeholder="Validní spotify link">
+          <button id="songAddButton">Požádat</button>
+        </div>
+      </div>
+      <div id="queueParent">
+        <p style="text-align: center">Nikde nic...<p>
+      </div>
+    </div>
+    <script src="/js/live.js"></script>
+    <script src="/js/sharedJs.js" type="module"></script>
+  </body>
+</html>

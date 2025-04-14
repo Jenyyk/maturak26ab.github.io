@@ -36,7 +36,8 @@ songAddButton.addEventListener("click", () => {
 })
 
 // API part
-const url = "http://jenyyk.duckdns.org:3030/music";
+const url = "https://maturak-music-api-production.up.railway.app/music";
+// const url = "http://jenyyk.duckdns.org:3030/music";
 // const url = "http://192.168.0.186:3030/music";
 // const url = "http://localhost:3030/music";
 const queue = document.getElementById("queueParent");

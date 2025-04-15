@@ -55,7 +55,7 @@ const queue = document.getElementById("queueParent");
 let savedPassword = "";
 
 updateList();
-
+let votedFor = [];
 async function updateList() {
   const res = await fetch(url);
   if (!res.ok) throw new Error("Failed to fetch songs");
@@ -68,6 +68,11 @@ async function updateList() {
     let songLeft = document.createElement("div");
     let songImage = document.createElement("img");
     let songTitle = document.createElement("a");
+    let songRight = document.createElement("div");
+    let songVotes = document.createElement("div");
+    let songUp = document.createElement("button");
+    let songVoteValue = document.createElement("p");
+    let songDown = document.createElement("button");
     let songDelete = document.createElement("button");
 
     songElement.setAttribute("class", "song");
@@ -78,14 +83,37 @@ async function updateList() {
     songDelete.innerHTML = "X";
     songDelete.addEventListener("click", () => {
       deleteSong(song.uuid);
+    });
+
+    songUp.innerHTML = "+";
+    songUp.addEventListener("click", () => {
+      upvoteSong(song.uuid);
+      votedFor.push(song.uuid);
     })
+    songDown.innerHTML = "-";
+    songDown.addEventListener("click", () => {
+      downvoteSong(song.uuid);
+      votedFor.push(song.uuid);
+    });
+    if (votedFor.includes(song.uuid)) {
+      songUp.disabled = true;
+      songDown.disabled = true;
+    }
 
     songLeft.appendChild(songImage);
     songLeft.appendChild(songTitle);
     songElement.appendChild(songLeft);
+
+    songVotes.setAttribute("class", "songVotes");
+    songVoteValue.innerHTML = song.votes;
+    songVotes.appendChild(songUp);
+    songVotes.appendChild(songVoteValue);
+    songVotes.appendChild(songDown);
+    songRight.appendChild(songVotes);
     if (savedPassword !== "") {
-      songElement.appendChild(songDelete);
+      songRight.appendChild(songDelete);
     }
+    songElement.appendChild(songRight);
 
     queue.appendChild(songElement);
   })
@@ -113,6 +141,21 @@ async function deleteSong(songId) {
       id: songId,
       password: savedPassword,
     })
+  });
+  updateList();
+  return await res.status
+}
+
+async function upvoteSong(songId) {
+  const res = await fetch(`${url}/upvote/${songId}`, {
+    method: "PATCH"
+  });
+  updateList();
+  return await res.status
+}
+async function downvoteSong(songId) {
+  const res = await fetch(`${url}/downvote/${songId}`, {
+    method: "PATCH"
   });
   updateList();
   return await res.status

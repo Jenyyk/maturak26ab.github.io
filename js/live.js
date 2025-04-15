@@ -55,11 +55,13 @@ const queue = document.getElementById("queueParent");
 let savedPassword = "";
 
 updateList();
-let votedFor = [];
+let votedFor = JSON.parse(localStorage.getItem("votedStorage")) || [];
 async function updateList() {
   const res = await fetch(url);
   if (!res.ok) throw new Error("Failed to fetch songs");
   json = await res.json()
+  // sort based on votes
+  json.sort((a, b) => b.votes - a.votes);
   // clear out current DOM
   queue.innerHTML = null;
   // append an element for each song in queue
@@ -89,11 +91,13 @@ async function updateList() {
     songUp.addEventListener("click", () => {
       upvoteSong(song.uuid);
       votedFor.push(song.uuid);
+      saveVotes()
     })
     songDown.innerHTML = "-";
     songDown.addEventListener("click", () => {
       downvoteSong(song.uuid);
       votedFor.push(song.uuid);
+      saveVotes()
     });
     if (votedFor.includes(song.uuid)) {
       songUp.disabled = true;
@@ -159,4 +163,9 @@ async function downvoteSong(songId) {
   });
   updateList();
   return await res.status
+}
+
+function saveVotes() {
+  localStorage.setItem("votedStorage", JSON.stringify(votedFor));
+  votedFor = JSON.parse(localStorage.getItem("votedStorage"));
 }

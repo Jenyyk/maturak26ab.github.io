@@ -65,7 +65,7 @@ async function updateList() {
   // append an element for each song in queue
   json.forEach((song) => {
     let songElement = document.createElement("div");
-    let songRight = document.createElement("div");
+    let songLeft = document.createElement("div");
     let songImage = document.createElement("img");
     let songTitle = document.createElement("a");
     let songDelete = document.createElement("button");
@@ -80,9 +80,9 @@ async function updateList() {
       deleteSong(song.uuid);
     })
 
-    songRight.appendChild(songImage);
-    songRight.appendChild(songTitle);
-    songElement.appendChild(songRight);
+    songLeft.appendChild(songImage);
+    songLeft.appendChild(songTitle);
+    songElement.appendChild(songLeft);
     if (savedPassword !== "") {
       songElement.appendChild(songDelete);
     }

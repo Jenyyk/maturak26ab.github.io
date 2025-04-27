@@ -31,6 +31,8 @@ async function runWasm() {
     "ACC:" + "CZ63" + "6210" + "670100" + "2222086531" +
     `*AM:${el.value * 400}` +
     "*CC:CZK" +
+    "*PT:IP" +
+    "*RN:Maturitní ples Gypce 2026" +
     "*MSG:prosím zadejte svůj e-mail" +
     `*X-VS:${Math.floor(Math.random() * 50000)}` +
     "*";

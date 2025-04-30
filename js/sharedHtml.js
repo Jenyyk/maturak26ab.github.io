@@ -68,7 +68,7 @@ async function insertFooter() {
           const footer = footerDoc.querySelector('footer');
 
           const year = new Date(Date.now()).getFullYear();
-          footerDoc.getElementById("yearLabel").innerHTML = `jenyyk ${year}🄯`;
+          footerDoc.getElementById("yearLabel").innerHTML = `jenyyk ${year}©`;
 
           document.body.appendChild(footer);
       })

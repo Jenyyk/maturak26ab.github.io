@@ -21,7 +21,9 @@
 @font-face {
   font-family: "Roboto";
   src:
+    local("Roboto"),
     url("/assets/Roboto.ttf") format("TrueType");
+    font-display: swap;
 }
 
 html {

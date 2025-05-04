@@ -16,7 +16,7 @@ function handleNext() {
   imageElement.remove();
   imageElement = document.createElement("img");
   presentationDiv.prepend(imageElement);
-  imageElement.setAttribute("src", `/assets/presentation/${imageIndex}.png`);
+  imageElement.setAttribute("src", `/assets/presentation/${imageIndex}.webp`);
 }
 
 function handlePrev() {
@@ -27,5 +27,5 @@ function handlePrev() {
   imageElement.remove();
   imageElement = document.createElement("img");
   presentationDiv.prepend(imageElement);
-  imageElement.setAttribute("src", `/assets/presentation/${imageIndex}.png`);
+  imageElement.setAttribute("src", `/assets/presentation/${imageIndex}.webp`);
 }

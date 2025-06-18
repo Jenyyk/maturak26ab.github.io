@@ -63,6 +63,7 @@
 .a:has(img:hover),
 .b:has(img:hover) {
   transform: scale(1.05);
+  z-index: 1;
 }
 .a, .b { transition: all 500ms ease-out; }
 

@@ -32,7 +32,7 @@
 }
 
 @media (max-width: 1200px) {
-  #mainImageDiv { height: 40vh !important; min-height: 0 !important; }
+  #mainImageDiv { min-height: 40vh !important; min-height: 0 !important; }
   #mainTextParent { width: 80% !important; padding: 10px !important; }
   #mainTextParent > h1 { font-size: 2em !important; margin: 0 !important; }
   #mainTextParent > p { font-size: 1em !important; }

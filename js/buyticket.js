@@ -77,29 +77,3 @@ function updateValues(input) {
 function isEmailValid(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
-
-let popupVisible = false;
-function togglePopup() {
-  const terms = document.getElementById("termsPopup");
-  const termsBlocker = document.getElementById("termsBlocker");
-  popupVisible = !popupVisible
-  terms.style.display = (popupVisible) ? "block" : "none"
-  termsBlocker.style.display = (popupVisible) ? "block" : "none"
-  terms.animate([
-    { opacity: 0 },
-    { opacity: 1 }
-  ], {
-    duration: 200,
-    easing: 'ease-out',
-    fill: 'forwards'
-  });
-
-}
-document.getElementById("termsText").addEventListener("click", togglePopup)
-document.getElementById("popupCloseBtn").addEventListener("click", togglePopup)
-document.getElementById("termsBlocker").addEventListener("click", togglePopup)
-document.addEventListener("keyup", (e) => {
-  if (e.key === "Escape" && popupVisible) {
-    togglePopup();
-  }
-})

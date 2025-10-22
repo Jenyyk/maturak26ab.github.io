@@ -1,18 +1,18 @@
 const checkbox = document.getElementById("acceptCheckbox");
+const checkbox2 = document.getElementById("acceptCheckbox2");
 const amountSpan = document.getElementById("amountSpan");
 const emailInput = document.getElementById("emailInput");
 
 document.documentElement.style.setProperty("--blur-amount", (checkbox.checked) ? "0px" : "25px");
 checkbox.addEventListener("input", () => {
-  document.documentElement.style.setProperty("--blur-amount", (checkbox.checked && isEmailValid(emailInput.value)) ? "0px" : "25px");
+  document.documentElement.style.setProperty("--blur-amount", (checkbox.checked && checkbox2.checked && isEmailValid(emailInput.value)) ? "0px" : "25px");
 });
 emailInput.addEventListener("input", () => {
-  document.documentElement.style.setProperty("--blur-amount", (checkbox.checked && isEmailValid(emailInput.value)) ? "0px" : "25px");
+  document.documentElement.style.setProperty("--blur-amount", (checkbox.checked && checkbox2.checked && isEmailValid(emailInput.value)) ? "0px" : "25px");
 })
-document.getElementById("checkboxText").addEventListener("click", () => {
-  checkbox.checked = !checkbox.checked;
-  document.documentElement.style.setProperty("--blur-amount", (checkbox.checked && isEmailValid(emailInput.value)) ? "0px" : "25px");
-})
+checkbox2.addEventListener("input", () => {
+  document.documentElement.style.setProperty("--blur-amount", (checkbox.checked && checkbox2.checked && isEmailValid(emailInput.value)) ? "0px" : "25px");
+});
 
 import init, { get_qr } from "/js/qrpkg/wasm_qr.js";
 updateValues(1);
@@ -33,7 +33,7 @@ async function runWasm() {
       amountSpan.innerHTML = `${el.value * 400},- Kč`;
 
       if (isEmailValid(emailInput.value)) {
-        updateQr(el.value, emailInput.value.replace("@", ":at:"))
+        updateQr(el.value, emailInput.value.replace("@", ":"))
       }
     })
   });
@@ -41,8 +41,8 @@ async function runWasm() {
   emailInput.addEventListener("input", () => {
     if (isEmailValid(emailInput.value)) {
       emailInput.setCustomValidity("");
-      updateQr(numInput.value, emailInput.value.replace("@", ":at:"))
-      document.getElementById("emailSpan").innerHTML = emailInput.value.replace("@", ":at:");
+      updateQr(numInput.value, emailInput.value.replace("@", ":"));
+      document.getElementById("emailSpan").innerHTML = emailInput.value.replace("@", ":");
     } else {
       emailInput.setCustomValidity("Invalid field.");
     }
@@ -53,7 +53,7 @@ async function runWasm() {
   function updateQr(amount, email) {
     const bank_qr =
     "SPD*1.0*" +
-    "ACC:" + "CZ63" + "6210" + "670100" + "2222086531" +
+    "ACC:CZ2520100000002903183740" +
     `*AM:${amount}` +
     "*CC:CZK" +
     "*PT:IP" +

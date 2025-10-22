@@ -2,6 +2,15 @@
   --blur-amount: 25px;
 }
 
+p, span, pre, input, label {
+  font-size: 1em;
+}
+
+h1{
+  text-align:center;
+}
+
+
 #termsPopup {
     position: fixed;
     top: 50%;
@@ -48,6 +57,8 @@
 }
 
 #siteParent {
+  padding-left:10%;
+  padding-right: 10%;
   display: flex;
   flex-direction: row;
   min-height: 80vh;
@@ -59,18 +70,28 @@
   box-sizing: border-box;
 }
 #leftSide {
-  width: 35%;
+  width: 40%;
 }
-#leftSide p {
-    font-size: 1.4em;
-    margin: 10px;
+
+#warning {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
+
 .formLabel {
-    margin: 0 28px;
+    margin-top: 28px;
+    margin-bottom: 0;
     font-size: 1.4em;
 }
 #emailInput {
-    font-size: 1.6em;
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: var(--border-radius);
+  background-color: var(--main-color);
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 #emailInput:user-invalid { background-color: #ff8080a0; }
 #emailInput:user-valid   { background-color: #80ff80a0; }
@@ -78,11 +99,35 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+#checkboxWrapper {
+  display: flex;
+  align-items: flex-start;  /* aligns items at the top */
+  gap: 10px;
+  max-width: 100%;
+  margin-top: 2vh;
+}
+
+#acceptCheckbox2,
+#acceptCheckbox {
+  cursor: pointer;
+  flex-shrink: 0;
+  height: 1.2em;
+  width: 1.2em;
+  /* Align checkbox to first line of text */
+  margin-top: 0.15em;  /* fine-tuned for font-size */
+}
+
 #checkboxText {
-    font-size: 1.5em;
+  font-size: 1em;
+  cursor: default;
+  flex: 1 1 0;
+  word-break: break-word;
+  margin: 0;  /* remove default <p> margin */
 }
 
 #inputs {
+  margin: 2% 5%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -91,25 +136,72 @@
 #inputRange {
   height: 1.6em;
   font-size: 1.6em;
-  width: 60%;
+  width: 80%;
   margin: 0 30px 0 12px;
 }
 #inputNumber {
-  height: 1.6em;
-  font-size: 1.2em;
-  width: 20%;
+  height: 1.2em;
+  font-size: 1em;
+  width: 13%;
   color: black;
 }
 
 #qrImage {
   border: 2px solid var(--accent-color);
   border-radius: 12px;
-  width: 100%;
+  width: 70%;
+  margin-left: 15%;
   image-rendering: pixelated;
-  margin: 0;
 }
 
-.censor { position: relative; }
+#paymentInfo {
+    padding: 1.5rem 2rem;
+  }
+
+  #paymentInfo h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  #paymentInfo .row {
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed #d1d5db;
+  }
+
+  .censorManual {
+    display: relative;
+  }
+
+  #paymentInfo .row:last-child {
+    font-size: 1.2rem;
+    border-bottom: none;
+  }
+
+  #paymentInfo .label {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  #paymentInfo .value {
+    font-size: 1rem;
+  }
+
+  #paymentInfo #amountSpan {
+    font-size: 1rem;
+  }
+
+  #paymentInfo #emailSpan {
+    font-size: 1rem;
+  }
+
+.censor {
+  position: relative;
+}
 .censor * {
   filter: blur(var(--blur-amount));
   transition: filter 200ms ease-out;
@@ -132,20 +224,16 @@
 #rightSide {
   position: relative;
   width: 65%;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  display: flex;
+  flex-direction: column;
 }
-#acceptCheckbox {
-  height: 1.6em;
-  width: 1.6em;
-  margin: 0 10px 0 0;
-}
+
 #rightSide::before {
   content:"";
   position: absolute;
   height: 90%;
   width: 4px;
-  top: 5%;
+  top: 4%;
   left: 0;
   background-color: var(--accent-color);
   border-radius: 2px;
@@ -160,9 +248,67 @@
     margin-left: 30px;
 }
 
+#rightSide {
+  padding: 20px;
+  color: #1f2937;
+}
+
+.ticket-steps {
+  background: var(--secondary-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  padding: 0 20px;
+}
+
+.ticket-steps h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--contrastLight);
+  text-align: center;
+}
+
+.ticket-steps ol {
+  list-style: none;
+  counter-reset: step-counter;
+  padding-left: 0;
+}
+
+.ticket-steps li {
+  counter-increment: step-counter;
+  background: var(--main-color);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.ticket-steps li::before {
+  content: counter(step-counter);
+  background: var(--accent-color);
+  color: #fff;
+  font-weight: bold;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  left: -13px;
+  top: 12px;
+}
+
+.ticket-steps strong {
+  color: var(--contrast-color);
+}
+
+
 @media (max-width: 1200px) {
+  #pageTitle{
+    display: none;
+  }
   #siteParent {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   #siteParent div { padding: 10px; }
   #rightSide { width: 100%; }

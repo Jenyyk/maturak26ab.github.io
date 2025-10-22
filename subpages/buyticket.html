@@ -20,12 +20,6 @@
 
         <div class="censor">
           <img id="qrImage" alt="Zde se objeví QR kód. Zadejte Váš email. Pokud se QR kód neobjeví, Váš prohlížeč nepodporuje WebAssembly">
-          <pre id="paymentInfo">
-            <span>číslo účtu:</span><span>(dodáme)</span>
-            <span>příjemce:</span><span>Maturitní ples Gypce 2026</span>
-            <span>částka:</span><span id="amountSpan">400,- Kč</span>
-            <span>zpráva:</span><span id="emailSpan">(zadejte váš email)</span>
-          </pre>
         </div>
         <p id="warning">Neměňte znění zprávy pro příjemce</p>
         <p class="formLabel">Počet lístků:</p>
@@ -71,6 +65,13 @@
               Vstupenka dorazí nejpozději <strong>do 5 pracovních dnů</strong> od zaplacení, obvykle však dříve.
             </li>
           </ol>
+        </div>
+        <div id="paymentInfo">
+          <h3>Platební údaje</h3>
+          <div class="row"><span class="label">Číslo účtu:</span><span class="value">2903183740/2010</span></div>
+          <div class="row"><span class="label">Příjemce:</span><span class="value">Maturitní ples Gypce 2026</span></div>
+          <div class="row"><span class="label">Částka:</span><span class="value" id="amountSpan">400,- Kč</span></div>
+          <div class="row"><span class="label">Zpráva:</span><span class="value" id="emailSpan">(zadejte váš email)</span></div>
         </div>
       </div>
 

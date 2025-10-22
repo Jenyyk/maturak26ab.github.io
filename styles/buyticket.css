@@ -154,9 +154,51 @@ h1{
   image-rendering: pixelated;
 }
 
-#paymentInfo{
-  display: none;
-}
+#paymentInfo {
+    padding: 1.5rem 2rem;
+  }
+
+  #paymentInfo h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  #paymentInfo .row {
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed #d1d5db;
+  }
+
+  .censorManual {
+    display: relative;
+  }
+
+  #paymentInfo .row:last-child {
+    font-size: 1.2rem;
+    border-bottom: none;
+  }
+
+  #paymentInfo .label {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  #paymentInfo .value {
+    font-size: 1rem;
+  }
+
+  #paymentInfo #amountSpan {
+    font-size: 1rem;
+  }
+
+  #paymentInfo #emailSpan {
+    font-size: 1rem;
+  }
+
 .censor { 
   position: relative; 
 }

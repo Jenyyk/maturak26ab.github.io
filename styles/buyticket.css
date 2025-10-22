@@ -199,8 +199,8 @@ h1{
     font-size: 1rem;
   }
 
-.censor { 
-  position: relative; 
+.censor {
+  position: relative;
 }
 .censor * {
   filter: blur(var(--blur-amount));
@@ -308,7 +308,7 @@ h1{
     display: none;
   }
   #siteParent {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   #siteParent div { padding: 10px; }
   #rightSide { width: 100%; }

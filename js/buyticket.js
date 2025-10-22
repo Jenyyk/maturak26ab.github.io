@@ -33,7 +33,7 @@ async function runWasm() {
       amountSpan.innerHTML = `${el.value * 400},- Kč`;
 
       if (isEmailValid(emailInput.value)) {
-        updateQr(el.value, emailInput.value)
+        updateQr(el.value, emailInput.value.replace("@", ":at:"))
       }
     })
   });
@@ -41,8 +41,8 @@ async function runWasm() {
   emailInput.addEventListener("input", () => {
     if (isEmailValid(emailInput.value)) {
       emailInput.setCustomValidity("");
-      updateQr(numInput.value, emailInput.value)
-      document.getElementById("emailSpan").innerHTML = emailInput.value;
+      updateQr(numInput.value, emailInput.value.replace("@", ":at:"))
+      document.getElementById("emailSpan").innerHTML = emailInput.value.replace("@", ":at:");
     } else {
       emailInput.setCustomValidity("Invalid field.");
     }

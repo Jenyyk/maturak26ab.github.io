@@ -170,7 +170,7 @@
     width: 90%;
     height: 4px;
     left: 5%;
-    top: 100%;
+    top: 0;
   }
   #leftSide  { width: 100%; }
   #qrImage { width: 90%; margin: 0 5%; }

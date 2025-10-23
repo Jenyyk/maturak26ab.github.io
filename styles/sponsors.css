@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(-7deg, rgba(255, 162, 0, 0.4) 27%, 65%, rgb(40, 0, 90));
+    background: var(--main-color);
 }
 
 h1, h2, h3 {
@@ -113,6 +113,8 @@ p {
   border: 2px solid var(--accent-color);
   border-radius: 12px;
   background-color: color-mix(in srgb, var(--secondary-color) 40%, transparent);
+
+  box-shadow: 0px 8px 30px rgba(15,23,42,0.08);
 }
 .otherSponsor > * {
   margin: 0 20px;

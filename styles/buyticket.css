@@ -93,6 +93,10 @@ h1{
   border: 3px solid var(--contrast-color);
   box-sizing: border-box;
 }
+#emailInput::placeholder {
+    color: var(--contrast-color);
+    opacity: 0.8;
+}
 #emailInput:user-invalid { background-color: #ff8080a0; }
 #emailInput:user-valid   { background-color: #80ff80a0; }
 #termsText {

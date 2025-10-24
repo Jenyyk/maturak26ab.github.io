@@ -89,8 +89,8 @@ h1{
   width: 100%;
   padding: 5px 10px;
   border-radius: var(--border-radius);
-  background-color: var(--main-color);
-  border: 1px solid #ccc;
+  background-color: #ff8080a0;
+  border: 3px solid var(--contrast-color);
   box-sizing: border-box;
 }
 #emailInput:user-invalid { background-color: #ff8080a0; }

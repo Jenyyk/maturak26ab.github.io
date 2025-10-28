@@ -53,14 +53,10 @@ h1{
 }
 #emailInput:user-invalid { background-color: #ff8080a0; }
 #emailInput:user-valid   { background-color: #80ff80a0; }
-#termsText {
-    text-decoration: underline;
-    cursor: pointer;
-}
 
 .checkboxWrapper {
   display: flex;
-  align-items: flex-start;  /* aligns items at the top */
+  align-items: center;
   gap: 10px;
   max-width: 100%;
   margin-top: 2vh;
@@ -72,8 +68,6 @@ h1{
   flex-shrink: 0;
   height: 1.2em;
   width: 1.2em;
-  /* Align checkbox to first line of text */
-  margin-top: 0.15em;  /* fine-tuned for font-size */
 }
 
 .checkboxText {

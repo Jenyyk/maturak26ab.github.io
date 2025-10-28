@@ -77,3 +77,15 @@ function updateValues(input) {
 function isEmailValid(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
+
+// tohle je nějaká forma accesibility
+// jsem si jistej
+// -Jeník
+document.querySelectorAll(".checkboxWrapper").forEach((wrapper) => {
+  let checkbox = wrapper.querySelector("input");
+  let text = wrapper.querySelector("p");
+
+  text.addEventListener("click", () => {
+    checkbox.checked = !checkbox.checked;
+  });
+})

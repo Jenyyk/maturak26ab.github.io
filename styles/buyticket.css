@@ -10,52 +10,6 @@ h1{
   text-align:center;
 }
 
-
-#termsPopup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 100;
-    background: var(--secondary-color);
-    padding: 20px;
-    border-radius: 12px;
-    border: 2px solid var(--accent-color);
-    transition: all 200ms ease-out;
-}
-#termsBlocker {
-    position: absolute;
-    background-color: #000000a0;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 99;
-}
-#popupCloseBtn {
-    right: 20px;
-    position: absolute;
-    color: red;
-    cursor: pointer;
-}
-#eMailText {
-  position: relative;
-}
-#eMailText::before {
-  content: "";
-  position: absolute;
-  left: -20px;
-  top: -10px;
-  width: calc(100% + 40px);
-  height: calc(100% + 20px);
-  border-radius: 12px;
-  z-index: -1;
-  transition: all 600ms ease-in-out;
-}
-#termsPopup:has(#eMailUseText:hover) #eMailText::before {
-  background-color: color-mix(in srgb, var(--accent-color) 80%, transparent);
-}
-
 #siteParent {
   padding-left:10%;
   padding-right: 10%;

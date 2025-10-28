@@ -4,12 +4,12 @@ const amountSpan = document.getElementById("amountSpan");
 const emailInput = document.getElementById("emailInput");
 
 document.documentElement.style.setProperty("--blur-amount", (checkbox.checked) ? "0px" : "25px");
-checkbox.addEventListener("input", () => {
-  document.documentElement.style.setProperty("--blur-amount", (checkbox.checked && checkbox2.checked && isEmailValid(emailInput.value)) ? "0px" : "25px");
-});
 emailInput.addEventListener("input", () => {
   document.documentElement.style.setProperty("--blur-amount", (checkbox.checked && checkbox2.checked && isEmailValid(emailInput.value)) ? "0px" : "25px");
 })
+checkbox.addEventListener("input", () => {
+  document.documentElement.style.setProperty("--blur-amount", (checkbox.checked && checkbox2.checked && isEmailValid(emailInput.value)) ? "0px" : "25px");
+});
 checkbox2.addEventListener("input", () => {
   document.documentElement.style.setProperty("--blur-amount", (checkbox.checked && checkbox2.checked && isEmailValid(emailInput.value)) ? "0px" : "25px");
 });
@@ -87,5 +87,6 @@ document.querySelectorAll(".checkboxWrapper").forEach((wrapper) => {
 
   text.addEventListener("click", () => {
     checkbox.checked = !checkbox.checked;
+    document.documentElement.style.setProperty("--blur-amount", (checkbox.checked && checkbox2.checked && isEmailValid(emailInput.value)) ? "0px" : "25px");
   });
 })

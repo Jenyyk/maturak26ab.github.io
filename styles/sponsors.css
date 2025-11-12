@@ -129,6 +129,9 @@ p {
   background: #ffffffa0;
   padding: 10px;
 }
+.otherSponsor > img.darkBg {
+    background: #000000a0;
+}
 .otherSponsor > div {
   display: flex;
   flex-direction: column;
@@ -140,6 +143,9 @@ p {
   .otherSponsor {
     width: 100%;
     flex-direction: column;
+  }
+  .otherSponsor > img {
+      margin-bottom: 10px;
   }
   .otherSponsor > img { width: 35%; }
 }

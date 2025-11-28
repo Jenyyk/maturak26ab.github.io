@@ -2,17 +2,38 @@ const checkbox = document.getElementById("acceptCheckbox");
 const checkbox2 = document.getElementById("acceptCheckbox2");
 const amountSpan = document.getElementById("amountSpan");
 const emailInput = document.getElementById("emailInput");
+let ticketsLeft = 200;
 
-document.documentElement.style.setProperty("--blur-amount", (checkbox.checked) ? "0px" : "25px");
+// Fetch the ticket count asynchronously and update the DOM when ready
+(async () => {
+  try {
+    const response = await fetch("https://jenyyk.duckdns.org/ticketcount");
+    ticketsLeft = +(await response.text());
+    document.getElementById("ticketsLeft").innerHTML = ticketsLeft;
+    if (ticketsLeft <= 0) {
+      document.getElementById("ticketsLeftParent").innerHTML = "Lístky jsou vyprodány!";
+    }
+  } catch (error) {
+    console.error("Failed to fetch ticket count:", error);
+  }
+})();
+
+
+document.documentElement.style.setProperty("--blur-amount", (shouldUnblur()) ? "0px" : "25px");
 emailInput.addEventListener("input", () => {
-  document.documentElement.style.setProperty("--blur-amount", (checkbox.checked && checkbox2.checked && isEmailValid(emailInput.value)) ? "0px" : "25px");
+  document.documentElement.style.setProperty("--blur-amount", (shouldUnblur()) ? "0px" : "25px");
 })
 checkbox.addEventListener("input", () => {
-  document.documentElement.style.setProperty("--blur-amount", (checkbox.checked && checkbox2.checked && isEmailValid(emailInput.value)) ? "0px" : "25px");
+  document.documentElement.style.setProperty("--blur-amount", (shouldUnblur()) ? "0px" : "25px");
 });
 checkbox2.addEventListener("input", () => {
-  document.documentElement.style.setProperty("--blur-amount", (checkbox.checked && checkbox2.checked && isEmailValid(emailInput.value)) ? "0px" : "25px");
+  document.documentElement.style.setProperty("--blur-amount", (shouldUnblur()) ? "0px" : "25px");
 });
+
+function shouldUnblur() {
+  console.log(ticketsLeft)
+  return checkbox.checked && checkbox2.checked && isEmailValid(emailInput.value) && ticketsLeft > 0;
+}
 
 import init, { get_qr } from "/js/qrpkg/wasm_qr.js";
 updateValues(1);
@@ -24,7 +45,8 @@ async function runWasm() {
   const numInput = document.getElementById("inputNumber");
   const rangeInput = document.getElementById("inputRange");
 
-  updateQr(1, "");
+  // cheeky
+  setQr("QR kód z mnoha možných důvodů nemůžeme odhalit");
 
   // update QR on input change
   document.querySelectorAll("#inputRange, #inputNumber").forEach((el) => {
@@ -32,20 +54,20 @@ async function runWasm() {
       updateValues(el.value);
       amountSpan.innerHTML = `${el.value * 400},- Kč`;
 
-      if (isEmailValid(emailInput.value)) {
+      if (shouldUnblur()) {
         updateQr(el.value, emailInput.value.replace("@", ":"))
       }
     })
   });
 
   emailInput.addEventListener("input", () => {
-    if (isEmailValid(emailInput.value)) {
-      emailInput.setCustomValidity("");
-      updateQr(numInput.value, emailInput.value.replace("@", ":"));
-      document.getElementById("emailSpan").innerHTML = emailInput.value.replace("@", ":");
-    } else {
+    if (!isEmailValid(emailInput.value)) {
       emailInput.setCustomValidity("Invalid field.");
+      return;
     }
+    emailInput.setCustomValidity("");
+    document.getElementById("emailSpan").innerHTML = emailInput.value.replace("@", ":");
+    updateQr(numInput.value, emailInput.value.replace("@", ":"));
   })
 
 
@@ -64,7 +86,11 @@ async function runWasm() {
 
     const placeholder = "online lístky zatim neprodáváme :)";
 
-    const qrDataUrl = get_qr(bank_qr);
+    setQr(bank_qr);
+  }
+
+  function setQr(qr) {
+    const qrDataUrl = get_qr(qr);
     document.getElementById("qrImage").src = qrDataUrl;
   }
 }
@@ -87,17 +113,10 @@ document.querySelectorAll(".checkboxWrapper").forEach((wrapper) => {
 
   text.addEventListener("click", () => {
     checkbox.checked = !checkbox.checked;
-    document.documentElement.style.setProperty("--blur-amount", (checkbox.checked && checkbox2.checked && isEmailValid(emailInput.value)) ? "0px" : "25px");
+    document.documentElement.style.setProperty("--blur-amount", (shouldUnblur()) ? "0px" : "25px");
   });
 })
 
-updateTicketsLeft();
-setInterval(updateTicketsLeft, 10000);
-let ticketsLeftSpan = document.getElementById("ticketsLeft");
-function updateTicketsLeft() {
-  fetch("https://jenyyk.duckdns.org/ticketcount")
-    .then(response => response.text())
-    .then(data => {
-      ticketsLeftSpan.innerHTML = data;
-    });
+if (ticketsLeft <= 0) {
+  document.getElementById("ticketsLeftParent").innerHTML = "Lístky jsou vyprodány!";
 }

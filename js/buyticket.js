@@ -31,7 +31,6 @@ checkbox2.addEventListener("input", () => {
 });
 
 function shouldUnblur() {
-  console.log(ticketsLeft)
   return checkbox.checked && checkbox2.checked && isEmailValid(emailInput.value) && ticketsLeft > 0;
 }
 

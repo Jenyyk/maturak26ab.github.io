@@ -254,6 +254,41 @@ h1{
   color: var(--contrast-color);
 }
 
+#ticketsLeftCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#ticketsLeftCenter * { margin: 0; }
+
+#ticketsLeftParent {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: clamp(0px, 9em, 9vw);
+    border: 2px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 15px;
+    margin: 30px;
+    backdrop-filter: blur(3px);
+    box-shadow:0 8px 30px rgba(15,23,42,0.08);
+}
+#ticketsLeftParent * { margin: 0; }
+
+#ticketsLeft { position: relative; }
+#ticketsLeft::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: var(--accent-color);
+    border-radius: 10px;
+    position: absolute;
+    bottom: clamp(0px, 20px, 18%);
+    left: 0;
+}
+
 
 @media (max-width: 1200px) {
   #pageTitle{

@@ -90,3 +90,14 @@ document.querySelectorAll(".checkboxWrapper").forEach((wrapper) => {
     document.documentElement.style.setProperty("--blur-amount", (checkbox.checked && checkbox2.checked && isEmailValid(emailInput.value)) ? "0px" : "25px");
   });
 })
+
+updateTicketsLeft();
+setInterval(updateTicketsLeft, 10000);
+let ticketsLeftSpan = document.getElementById("ticketsLeft");
+function updateTicketsLeft() {
+  fetch("https://jenyyk.duckdns.org/ticketcount")
+    .then(response => response.text())
+    .then(data => {
+      ticketsLeftSpan.innerHTML = data;
+    });
+}

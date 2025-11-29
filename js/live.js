@@ -47,7 +47,8 @@ passInput.addEventListener("change", () => {
 })
 
 // API part
-const url = "https://maturak-music-api-production.up.railway.app/music";
+const url = "https://jenyyk.duckdns.org/maturak/music";
+// const url = "https://maturak-music-api-production.up.railway.app/music";
 // const url = "http://jenyyk.duckdns.org:3030/music";
 // const url = "http://192.168.0.186:3030/music";
 // const url = "http://localhost:3030/music";

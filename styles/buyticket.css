@@ -267,11 +267,11 @@ h1{
     justify-content: center;
     align-items: center;
     position: relative;
-    font-size: clamp(0px, 9em, 9vw);
+    font-size: clamp(0px, 2em, 2vw);
     border: 2px solid var(--accent-color);
     border-radius: 12px;
     padding: 15px;
-    margin: 30px;
+    margin: 0 10px;
     backdrop-filter: blur(3px);
     box-shadow:0 8px 30px rgba(15,23,42,0.08);
 }
@@ -291,6 +291,18 @@ h1{
 
 
 @media (max-width: 1200px) {
+  #ticketsLeftParent p{
+    font-size: 20px;
+  }
+  #rightSide:before{
+    display:none;
+  }
+  .ticket-steps{
+      margin-top: 36px;
+  }
+  .ticket-steps h2{
+    margin-top: 0;
+  }
   #pageTitle{
     display: none;
   }

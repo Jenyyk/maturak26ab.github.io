@@ -54,7 +54,7 @@ async function runWasm() {
       amountSpan.innerHTML = `${el.value * 400},- Kč`;
 
       if (shouldUnblur()) {
-        updateQr(el.value, emailInput.value.replace("@", ":"))
+        updateQr(el.value * 400, emailInput.value.replace(/a/g, "aa").replace("@", "at"))
       }
     })
   });
@@ -65,8 +65,8 @@ async function runWasm() {
       return;
     }
     emailInput.setCustomValidity("");
-    document.getElementById("emailSpan").innerHTML = emailInput.value.replace("@", ":");
-    updateQr(numInput.value, emailInput.value.replace("@", ":"));
+    document.getElementById("emailSpan").innerHTML = emailInput.value.replace(/a/g, "aa").replace("@", "at");
+    updateQr(numInput.value * 400, emailInput.value.replace(/a/g, "aa").replace("@", "at"));
   })
 
 

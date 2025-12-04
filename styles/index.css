@@ -95,6 +95,7 @@
   #buyTicketDiv { margin: 0 0 10px 0 !important; width: 80% !important; }
   #buyTicketDiv > h2 { font-size: 1em !important; }
   #buyTicketDiv > p { font-size: 0.8em !important; }
+  #buyLink { font-size: 1.2em !important; }
 }
 
 #mainContentDiv {

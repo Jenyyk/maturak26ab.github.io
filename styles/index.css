@@ -29,6 +29,7 @@
   backdrop-filter: blur(14px);
 
   width: 50%;
+  margin: 20px;
 }
 
 @media (max-width: 1200px) {
@@ -59,8 +60,7 @@
 
 #buyTicketDiv {
   width: 40%;
-  margin-top: 5px;
-  margin-bottom: 35px;
+  margin: 5px;
 
   border: 2px solid var(--accent-color);
   border-radius: 12px;
@@ -70,9 +70,6 @@
 
   transition: transform 500ms ease-out;
 }
-#buyTicketDiv:hover {
-  transform: scale(1.05);
-}
 #buyTicketDiv > h2 {
   font-size: 1.8em;
   color: var(--main-color-firm);
@@ -81,6 +78,19 @@
   font-size: 1.2em;
   color: var(--main-color-firm);
 }
+#buyLink {
+    margin: 20px;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 2em;
+    padding: 20px;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--accent-color) 60%, white), var(--accent-color));
+    border: 2px solid var(--accent-color);
+    transition: transform 400ms ease-out;
+    box-shadow:0 8px 30px rgba(15,23,42,0.3);
+}
+#buyLink:hover  { transform: scale(1.05); }
+#buyLink:active { transform: scale(0.9); }
 @media (max-width: 1200px) {
   #buyTicketDiv { margin: 0 0 10px 0 !important; width: 80% !important; }
   #buyTicketDiv > h2 { font-size: 1em !important; }

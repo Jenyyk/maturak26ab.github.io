@@ -130,6 +130,9 @@
   <script>
     // small script for year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // send heartbeat
+    fetch("https://jenyyk.duckdns.org/beat/podminky").then();
   </script>
 </body>
 </html>

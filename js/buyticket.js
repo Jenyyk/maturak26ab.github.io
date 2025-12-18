@@ -19,19 +19,17 @@ let ticketsLeft = 200;
 })();
 
 
-document.documentElement.style.setProperty("--blur-amount", (shouldUnblur()) ? "0px" : "25px");
-emailInput.addEventListener("input", () => {
-  document.documentElement.style.setProperty("--blur-amount", (shouldUnblur()) ? "0px" : "25px");
-})
-checkbox.addEventListener("input", () => {
-  document.documentElement.style.setProperty("--blur-amount", (shouldUnblur()) ? "0px" : "25px");
-});
-checkbox2.addEventListener("input", () => {
-  document.documentElement.style.setProperty("--blur-amount", (shouldUnblur()) ? "0px" : "25px");
-});
+handleBlurring();
+emailInput.addEventListener("input", handleBlurring);
+checkbox.addEventListener("input", handleBlurring);
+checkbox2.addEventListener("input", handleBlurring);
 
 function shouldUnblur() {
   return checkbox.checked && checkbox2.checked && isEmailValid(emailInput.value) && ticketsLeft > 0;
+}
+
+function handleBlurring() {
+  document.documentElement.style.setProperty("--blur-amount", (shouldUnblur()) ? "0px" : "25px");
 }
 
 import init, { get_qr } from "/js/qrpkg/wasm_qr.js";
@@ -48,13 +46,14 @@ async function runWasm() {
   setQr("QR kód z mnoha možných důvodů nemůžeme odhalit");
 
   // update QR on input change
-  document.querySelectorAll("#inputRange, #inputNumber").forEach((el) => {
-    el.addEventListener("input", () => {
-      updateValues(el.value);
-      amountSpan.innerHTML = `${el.value * 400},- Kč`;
+  [numInput, rangeInput].forEach((input) => {
+    input.addEventListener("input", () => {
+      // sets the value in the other input
+      updateValues(input.value);
+      amountSpan.innerHTML = `${input.value * 400},- Kč`;
 
       if (shouldUnblur()) {
-        updateQr(el.value * 400, emailInput.value.replace(/a/g, "aa").replace("@", "at"))
+        updateQr(el.value * 400, getSerializedEmail())
       }
     })
   });
@@ -65,8 +64,8 @@ async function runWasm() {
       return;
     }
     emailInput.setCustomValidity("");
-    document.getElementById("emailSpan").innerHTML = emailInput.value.replace(/a/g, "aa").replace("@", "at");
-    updateQr(numInput.value * 400, emailInput.value.replace(/a/g, "aa").replace("@", "at"));
+    document.getElementById("emailSpan").innerHTML = getSerializedEmail();
+    updateQr(numInput.value * 400, getSerializedEmail());
   })
 
 
@@ -94,6 +93,10 @@ async function runWasm() {
   }
 }
 
+function getSerializedEmail() {
+  return emailInput.value.replace(/a/g, "aa").replace("@", "at");
+}
+
 function updateValues(input) {
   document.getElementById("inputRange").value = input;
   document.getElementById("inputNumber").value = input;
@@ -112,7 +115,7 @@ document.querySelectorAll(".checkboxWrapper").forEach((wrapper) => {
 
   text.addEventListener("click", () => {
     checkbox.checked = !checkbox.checked;
-    document.documentElement.style.setProperty("--blur-amount", (shouldUnblur()) ? "0px" : "25px");
+    handleBlurring();
   });
 })
 

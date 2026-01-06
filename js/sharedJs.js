@@ -4,3 +4,5 @@ import "./scrollToTop.js";
 import "./titleCamel.js";
 import "./darkMode.js";
 import "./cookie.js";
+
+document.documentElement.style.backgroundColor = "#F9C561";
